@@ -1,0 +1,4 @@
+language: objective-c
+script: rake travis:script
+branches:
+  only: master
