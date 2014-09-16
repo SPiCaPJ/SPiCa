@@ -10,4 +10,9 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)CameraButton:(id)sender;
+
+- (IBAction)AlbumButton:(id)sender;
+
+
 @end

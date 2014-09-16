@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E15FFE46-8540-4BD5-A875-B00F22907BC6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SPiCa</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8BAB3F5C-08D8-48FE-93AB-8455491E3E0D</key>
+		<string>https://github.com/SPiCaPJ/SPiCa.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SPiCa/SPiCa/SPiCa.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8BAB3F5C-08D8-48FE-93AB-8455491E3E0D</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/SPiCaPJ/SPiCa.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8BAB3F5C-08D8-48FE-93AB-8455491E3E0D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8BAB3F5C-08D8-48FE-93AB-8455491E3E0D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SPiCa</string>
+		</dict>
+	</array>
+</dict>
+</plist>

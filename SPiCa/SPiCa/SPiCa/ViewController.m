@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"back2.jpg"]];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -26,4 +27,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)CameraButton:(id)sender {
+}
+
+- (IBAction)AlbumButton:(id)sender {
+}
 @end
