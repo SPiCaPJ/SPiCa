@@ -10,29 +10,41 @@
 	<string>SPiCa</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>8BAB3F5C-08D8-48FE-93AB-8455491E3E0D</key>
+		<key>39743189314708C3DE9595A26FD911D6512D5822</key>
+		<string>https://github.com/SPiCaPJ/SPiCa.git</string>
+		<key>ae26ec68-fddc-0a1e-2d08-ce57b7db7bff++505</key>
 		<string>https://github.com/SPiCaPJ/SPiCa.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>SPiCa/SPiCa/SPiCa.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>8BAB3F5C-08D8-48FE-93AB-8455491E3E0D</key>
+		<key>39743189314708C3DE9595A26FD911D6512D5822</key>
+		<string>../../../../..</string>
+		<key>ae26ec68-fddc-0a1e-2d08-ce57b7db7bff++505</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/SPiCaPJ/SPiCa.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8BAB3F5C-08D8-48FE-93AB-8455491E3E0D</string>
+	<string>ae26ec68-fddc-0a1e-2d08-ce57b7db7bff++505</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>8BAB3F5C-08D8-48FE-93AB-8455491E3E0D</string>
+			<string>39743189314708C3DE9595A26FD911D6512D5822</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ae26ec68-fddc-0a1e-2d08-ce57b7db7bff++505</string>
 			<key>IDESourceControlWCCName</key>
 			<string>SPiCa</string>
 		</dict>

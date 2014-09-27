@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate>
+{
+    UIPopoverController *popover;
+}
 
-- (IBAction)CameraButton:(id)sender;
+//カメラを起動する
+- (IBAction)Camera:(id)sender;
 
-- (IBAction)AlbumButton:(id)sender;
-
+//アルバムを起動する
+- (IBAction)Album:(id)sender;
 
 @end

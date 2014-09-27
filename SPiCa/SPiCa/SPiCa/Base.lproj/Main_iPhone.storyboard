@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,37 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vl-1N-2K2">
-                                <rect key="frame" x="104" y="269" width="113" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k90-nq-1f0">
+                                <rect key="frame" x="97" y="223" width="127" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="写真を撮る">
                                     <color key="titleColor" red="0.72232262599999997" green="0.87359805079999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="CameraButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="g6d-lX-dhc"/>
+                                    <action selector="Camera:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="46Y-Jj-H2K"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOF-DW-SfK">
-                                <rect key="frame" x="49" y="355" width="223" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5F-1I-QSb">
+                                <rect key="frame" x="50" y="329" width="221" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="アルバムから選択する">
                                     <color key="titleColor" red="0.72232262599999997" green="0.87359805079999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="AlbumButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TVd-gX-K7Z"/>
+                                    <action selector="Album:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="El1-8H-Ape"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="8vl-1N-2K2" secondAttribute="centerX" id="Nr0-7X-LPc"/>
-                            <constraint firstAttribute="centerX" secondItem="wOF-DW-SfK" secondAttribute="centerX" id="QSQ-F8-jSx"/>
-                            <constraint firstAttribute="centerY" secondItem="wOF-DW-SfK" secondAttribute="centerY" constant="-86" id="fRU-lu-hcL"/>
-                            <constraint firstAttribute="centerY" secondItem="8vl-1N-2K2" secondAttribute="centerY" id="mui-LI-fCk"/>
+                            <constraint firstAttribute="centerX" secondItem="k90-nq-1f0" secondAttribute="centerX" id="t1l-1b-T98"/>
+                            <constraint firstAttribute="centerX" secondItem="F5F-1I-QSb" secondAttribute="centerX" id="t5S-5V-SPF"/>
+                            <constraint firstAttribute="centerY" secondItem="F5F-1I-QSb" secondAttribute="centerY" constant="-60" id="v2X-uI-jQL"/>
+                            <constraint firstAttribute="centerY" secondItem="k90-nq-1f0" secondAttribute="centerY" constant="46" id="xwq-RN-c53"/>
                         </constraints>
                     </view>
                 </viewController>
