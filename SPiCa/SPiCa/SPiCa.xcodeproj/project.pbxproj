@@ -7,7 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B50717819C8CEC90054B259 /* back2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B50717719C8CEC90054B259 /* back2.jpg */; };
+		205206A719D702E200D2DEE9 /* DragView.m in Sources */ = {isa = PBXBuildFile; fileRef = 205206A419D702E200D2DEE9 /* DragView.m */; };
+		205206A819D702E200D2DEE9 /* editLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 205206A519D702E200D2DEE9 /* editLineViewController.m */; };
+		205206A919D702E200D2DEE9 /* homeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 205206A619D702E200D2DEE9 /* homeViewController.m */; };
+		205206AB19D702EA00D2DEE9 /* editStarViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 205206AA19D702EA00D2DEE9 /* editStarViewController.mm */; };
+		205206BB19D702F100D2DEE9 /* back1.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206AD19D702F100D2DEE9 /* back1.png */; };
+		205206BC19D702F100D2DEE9 /* back2.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206AE19D702F100D2DEE9 /* back2.png */; };
+		205206BD19D702F100D2DEE9 /* back3.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206AF19D702F100D2DEE9 /* back3.png */; };
+		205206BE19D702F100D2DEE9 /* back4.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206B019D702F100D2DEE9 /* back4.png */; };
+		205206BF19D702F100D2DEE9 /* back5.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206B119D702F100D2DEE9 /* back5.png */; };
+		205206C019D702F100D2DEE9 /* hoshi01.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206B319D702F100D2DEE9 /* hoshi01.png */; };
+		205206C119D702F100D2DEE9 /* hoshi11.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206B419D702F100D2DEE9 /* hoshi11.png */; };
+		205206C219D702F100D2DEE9 /* hoshi12.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206B519D702F100D2DEE9 /* hoshi12.png */; };
+		205206C319D702F100D2DEE9 /* hoshi13.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206B619D702F100D2DEE9 /* hoshi13.png */; };
+		205206C419D702F100D2DEE9 /* hoshi21.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206B719D702F100D2DEE9 /* hoshi21.png */; };
+		205206C519D702F100D2DEE9 /* hoshi22.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206B819D702F100D2DEE9 /* hoshi22.png */; };
+		205206C619D702F100D2DEE9 /* hoshi23.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206B919D702F100D2DEE9 /* hoshi23.png */; };
+		205206C719D702F100D2DEE9 /* hoshi99.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206BA19D702F100D2DEE9 /* hoshi99.png */; };
+		205206C919D7030200D2DEE9 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205206C819D7030200D2DEE9 /* opencv2.framework */; };
+		205206CB19D704C600D2DEE9 /* hisyatai1.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206CA19D704C600D2DEE9 /* hisyatai1.png */; };
 		87188F6219B9C8300073D35C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87188F6119B9C8300073D35C /* Foundation.framework */; };
 		87188F6419B9C8300073D35C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87188F6319B9C8300073D35C /* CoreGraphics.framework */; };
 		87188F6619B9C8300073D35C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87188F6519B9C8300073D35C /* UIKit.framework */; };
@@ -16,7 +34,6 @@
 		87188F7219B9C8300073D35C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87188F7119B9C8300073D35C /* AppDelegate.m */; };
 		87188F7519B9C8300073D35C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87188F7319B9C8300073D35C /* Main_iPhone.storyboard */; };
 		87188F7819B9C8300073D35C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87188F7619B9C8300073D35C /* Main_iPad.storyboard */; };
-		87188F7B19B9C8300073D35C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87188F7A19B9C8300073D35C /* ViewController.m */; };
 		87188F7D19B9C8300073D35C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87188F7C19B9C8300073D35C /* Images.xcassets */; };
 		87188F8419B9C8300073D35C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87188F8319B9C8300073D35C /* XCTest.framework */; };
 		87188F8519B9C8300073D35C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87188F6119B9C8300073D35C /* Foundation.framework */; };
@@ -36,7 +53,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3B50717719C8CEC90054B259 /* back2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back2.jpg; sourceTree = "<group>"; };
+		205206A019D702D100D2DEE9 /* DragView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragView.h; sourceTree = "<group>"; };
+		205206A119D702D100D2DEE9 /* editLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editLineViewController.h; sourceTree = "<group>"; };
+		205206A219D702D100D2DEE9 /* editStarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editStarViewController.h; sourceTree = "<group>"; };
+		205206A319D702D100D2DEE9 /* homeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homeViewController.h; sourceTree = "<group>"; };
+		205206A419D702E200D2DEE9 /* DragView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragView.m; sourceTree = "<group>"; };
+		205206A519D702E200D2DEE9 /* editLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = editLineViewController.m; sourceTree = "<group>"; };
+		205206A619D702E200D2DEE9 /* homeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homeViewController.m; sourceTree = "<group>"; };
+		205206AA19D702EA00D2DEE9 /* editStarViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = editStarViewController.mm; sourceTree = "<group>"; };
+		205206AD19D702F100D2DEE9 /* back1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back1.png; sourceTree = "<group>"; };
+		205206AE19D702F100D2DEE9 /* back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2.png; sourceTree = "<group>"; };
+		205206AF19D702F100D2DEE9 /* back3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back3.png; sourceTree = "<group>"; };
+		205206B019D702F100D2DEE9 /* back4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back4.png; sourceTree = "<group>"; };
+		205206B119D702F100D2DEE9 /* back5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back5.png; sourceTree = "<group>"; };
+		205206B319D702F100D2DEE9 /* hoshi01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoshi01.png; sourceTree = "<group>"; };
+		205206B419D702F100D2DEE9 /* hoshi11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoshi11.png; sourceTree = "<group>"; };
+		205206B519D702F100D2DEE9 /* hoshi12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoshi12.png; sourceTree = "<group>"; };
+		205206B619D702F100D2DEE9 /* hoshi13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoshi13.png; sourceTree = "<group>"; };
+		205206B719D702F100D2DEE9 /* hoshi21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoshi21.png; sourceTree = "<group>"; };
+		205206B819D702F100D2DEE9 /* hoshi22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoshi22.png; sourceTree = "<group>"; };
+		205206B919D702F100D2DEE9 /* hoshi23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoshi23.png; sourceTree = "<group>"; };
+		205206BA19D702F100D2DEE9 /* hoshi99.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoshi99.png; sourceTree = "<group>"; };
+		205206C819D7030200D2DEE9 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		205206CA19D704C600D2DEE9 /* hisyatai1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hisyatai1.png; sourceTree = "<group>"; };
 		87188F5E19B9C8300073D35C /* SPiCa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPiCa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87188F6119B9C8300073D35C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		87188F6319B9C8300073D35C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -49,8 +88,6 @@
 		87188F7119B9C8300073D35C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		87188F7419B9C8300073D35C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		87188F7719B9C8300073D35C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		87188F7919B9C8300073D35C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		87188F7A19B9C8300073D35C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		87188F7C19B9C8300073D35C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		87188F8219B9C8300073D35C /* SPiCaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPiCaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87188F8319B9C8300073D35C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -66,6 +103,7 @@
 			files = (
 				87188F6419B9C8300073D35C /* CoreGraphics.framework in Frameworks */,
 				87188F6619B9C8300073D35C /* UIKit.framework in Frameworks */,
+				205206C919D7030200D2DEE9 /* opencv2.framework in Frameworks */,
 				87188F6219B9C8300073D35C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +121,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		205206AC19D702F100D2DEE9 /* background */ = {
+			isa = PBXGroup;
+			children = (
+				205206AD19D702F100D2DEE9 /* back1.png */,
+				205206AE19D702F100D2DEE9 /* back2.png */,
+				205206AF19D702F100D2DEE9 /* back3.png */,
+				205206B019D702F100D2DEE9 /* back4.png */,
+				205206B119D702F100D2DEE9 /* back5.png */,
+			);
+			path = background;
+			sourceTree = "<group>";
+		};
+		205206B219D702F100D2DEE9 /* stamps */ = {
+			isa = PBXGroup;
+			children = (
+				205206B319D702F100D2DEE9 /* hoshi01.png */,
+				205206B419D702F100D2DEE9 /* hoshi11.png */,
+				205206B519D702F100D2DEE9 /* hoshi12.png */,
+				205206B619D702F100D2DEE9 /* hoshi13.png */,
+				205206B719D702F100D2DEE9 /* hoshi21.png */,
+				205206B819D702F100D2DEE9 /* hoshi22.png */,
+				205206B919D702F100D2DEE9 /* hoshi23.png */,
+				205206BA19D702F100D2DEE9 /* hoshi99.png */,
+			);
+			name = stamps;
+			path = background/stamps;
+			sourceTree = "<group>";
+		};
 		87188F5519B9C82F0073D35C = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +171,7 @@
 		87188F6019B9C8300073D35C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				205206C819D7030200D2DEE9 /* opencv2.framework */,
 				87188F6119B9C8300073D35C /* Foundation.framework */,
 				87188F6319B9C8300073D35C /* CoreGraphics.framework */,
 				87188F6519B9C8300073D35C /* UIKit.framework */,
@@ -116,13 +183,21 @@
 		87188F6719B9C8300073D35C /* SPiCa */ = {
 			isa = PBXGroup;
 			children = (
-				87188F7019B9C8300073D35C /* AppDelegate.h */,
-				87188F7119B9C8300073D35C /* AppDelegate.m */,
+				205206AC19D702F100D2DEE9 /* background */,
+				205206B219D702F100D2DEE9 /* stamps */,
 				87188F7319B9C8300073D35C /* Main_iPhone.storyboard */,
 				87188F7619B9C8300073D35C /* Main_iPad.storyboard */,
-				87188F7919B9C8300073D35C /* ViewController.h */,
-				87188F7A19B9C8300073D35C /* ViewController.m */,
-				3B50717719C8CEC90054B259 /* back2.jpg */,
+				87188F7019B9C8300073D35C /* AppDelegate.h */,
+				205206A319D702D100D2DEE9 /* homeViewController.h */,
+				205206A219D702D100D2DEE9 /* editStarViewController.h */,
+				205206A119D702D100D2DEE9 /* editLineViewController.h */,
+				205206A019D702D100D2DEE9 /* DragView.h */,
+				87188F7119B9C8300073D35C /* AppDelegate.m */,
+				205206A619D702E200D2DEE9 /* homeViewController.m */,
+				205206AA19D702EA00D2DEE9 /* editStarViewController.mm */,
+				205206A519D702E200D2DEE9 /* editLineViewController.m */,
+				205206A419D702E200D2DEE9 /* DragView.m */,
+				205206CA19D704C600D2DEE9 /* hisyatai1.png */,
 				87188F7C19B9C8300073D35C /* Images.xcassets */,
 				87188F6819B9C8300073D35C /* Supporting Files */,
 			);
@@ -234,11 +309,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				205206BE19D702F100D2DEE9 /* back4.png in Resources */,
+				205206BD19D702F100D2DEE9 /* back3.png in Resources */,
+				205206BB19D702F100D2DEE9 /* back1.png in Resources */,
+				205206BC19D702F100D2DEE9 /* back2.png in Resources */,
 				87188F7819B9C8300073D35C /* Main_iPad.storyboard in Resources */,
+				205206C719D702F100D2DEE9 /* hoshi99.png in Resources */,
 				87188F7D19B9C8300073D35C /* Images.xcassets in Resources */,
 				87188F7519B9C8300073D35C /* Main_iPhone.storyboard in Resources */,
 				87188F6C19B9C8300073D35C /* InfoPlist.strings in Resources */,
-				3B50717819C8CEC90054B259 /* back2.jpg in Resources */,
+				205206CB19D704C600D2DEE9 /* hisyatai1.png in Resources */,
+				205206C019D702F100D2DEE9 /* hoshi01.png in Resources */,
+				205206BF19D702F100D2DEE9 /* back5.png in Resources */,
+				205206C219D702F100D2DEE9 /* hoshi12.png in Resources */,
+				205206C119D702F100D2DEE9 /* hoshi11.png in Resources */,
+				205206C519D702F100D2DEE9 /* hoshi22.png in Resources */,
+				205206C619D702F100D2DEE9 /* hoshi23.png in Resources */,
+				205206C319D702F100D2DEE9 /* hoshi13.png in Resources */,
+				205206C419D702F100D2DEE9 /* hoshi21.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,9 +345,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87188F7B19B9C8300073D35C /* ViewController.m in Sources */,
+				205206A819D702E200D2DEE9 /* editLineViewController.m in Sources */,
 				87188F7219B9C8300073D35C /* AppDelegate.m in Sources */,
+				205206A719D702E200D2DEE9 /* DragView.m in Sources */,
 				87188F6E19B9C8300073D35C /* main.m in Sources */,
+				205206AB19D702EA00D2DEE9 /* editStarViewController.mm in Sources */,
+				205206A919D702E200D2DEE9 /* homeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +485,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SPiCa/SPiCa-Prefix.pch";
 				INFOPLIST_FILE = "SPiCa/SPiCa-Info.plist";
@@ -407,6 +502,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SPiCa/SPiCa-Prefix.pch";
 				INFOPLIST_FILE = "SPiCa/SPiCa-Info.plist";
