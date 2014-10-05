@@ -13,6 +13,7 @@
 @property UIImage *picture;
 
 @property NSArray *stars;
+- (IBAction)actionsocial:(id)sender;
 
 //- (IBAction)backView:(id)sender;
 @end

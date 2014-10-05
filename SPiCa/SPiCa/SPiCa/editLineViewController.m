@@ -50,5 +50,25 @@ UIImageView *showImageView;
 }
 
 
+- (IBAction)actionsocial:(id)sender {
+    //投稿するテキスト
+    NSString *sharedText = @"テキスト #SPiCa";
+    //投稿するコンテンツ、ここに画像を記載
+    NSArray *activityItems = @[sharedText];
+    
+    //連携できるアプリの取得
+    UIActivity *activity = [[UIActivity alloc] init];
+    NSArray *appActivivities = @[activity];
+    
+    //アクティビティ作成
+    UIActivityViewController *activityVC =[[UIActivityViewController alloc]
+                                           initWithActivityItems:
+                                           activityItems
+                                           applicationActivities:
+                                           appActivivities];
+    //表示
+    [self presentViewController:activityVC animated:YES completion:nil];
+    
+    }
 @end
 
