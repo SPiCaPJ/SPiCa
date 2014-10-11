@@ -12,6 +12,7 @@
 {
     UIPopoverController *popover;
 }
+@property (weak, nonatomic) IBOutlet UIImageView *starView;
 
 //カメラを起動する
 - (IBAction)Camera:(id)sender;

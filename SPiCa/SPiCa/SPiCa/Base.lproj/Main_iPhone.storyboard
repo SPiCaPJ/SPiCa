@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cMf-17-76D">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -13,9 +14,12 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="spcback2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Vvk-iT-OPd">
+                                <rect key="frame" x="-384" y="-76" width="1200" height="1200"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k90-nq-1f0">
                                 <rect key="frame" x="97" y="223" width="127" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -49,6 +53,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="fkN-3q-xeq"/>
                     <connections>
+                        <outlet property="starView" destination="Vvk-iT-OPd" id="txu-ej-Z52"/>
                         <segue destination="kl6-lz-0SI" kind="push" identifier="toEditStar" id="mkf-1K-e8W"/>
                     </connections>
                 </viewController>
@@ -65,9 +70,9 @@
                         <viewControllerLayoutGuide type="bottom" id="Xcr-V1-BjF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uOd-cb-Bw6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="gd6-MF-Cuy">
                         <barButtonItem key="rightBarButtonItem" title="決定" id="KXP-ZR-RzO">
@@ -90,9 +95,9 @@
                         <viewControllerLayoutGuide type="bottom" id="QEE-si-hfT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yw3-gx-5cO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="2D5-Su-1F9">
                         <barButtonItem key="rightBarButtonItem" title="完了" id="w8q-ai-rc7">
@@ -111,11 +116,17 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cMf-17-76D" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HVo-6w-0WC">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="HVo-6w-0WC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" id="Dfa-5o-Qfj">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="nm7-DJ-hU9"/>
                     </connections>
@@ -125,9 +136,13 @@
             <point key="canvasLocation" x="-29" y="-248"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="spcback2.jpg" width="1200" height="1200"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -3,7 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string></string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>ja</string>
+		<string>en</string>
+	</array>
 	<key>CFBundleDisplayName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>

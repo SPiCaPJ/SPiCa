@@ -18,11 +18,11 @@ UIImage *selectedImage;
 
 @implementation homeViewController
 
-//背景画像の設定
+
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"back2.png"]];
+//    [super viewDidLoad];
+
 	// Do any additional setup after loading the view, typically from a nib.
     
     //戻るボタンの文字を変更
@@ -36,6 +36,35 @@ UIImage *selectedImage;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//ステータスバーの文字色を白に
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+//メニュー画面が呼び出される度、画像回転
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    [super viewWillAppear:animated];
+    CABasicAnimation* rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    
+    rotationAnimation.toValue = [NSNumber numberWithFloat:(M_PI / 180) * 360];
+    
+    rotationAnimation.duration = 300.0f;
+    
+    rotationAnimation.repeatCount = HUGE_VALF;
+    
+    [_starView.layer addAnimation:rotationAnimation forKey:@"rotateAnimation"];
+    
+    
+    //ナビゲーションバーを非表示
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
+
+
 
 
 //写真を撮る押下
@@ -150,12 +179,7 @@ UIImage *selectedImage;
         
     }
 }
--(void)viewWillAppear:(BOOL)animated{
-    
-    //ナビゲーションバーを非表示
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
 
-}
 
 
 @end
