@@ -17,43 +17,42 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="spcback2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Vvk-iT-OPd">
-                                <rect key="frame" x="-384" y="-76" width="1200" height="1200"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" image="spcback3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aY3-S2-R0J">
+                                <rect key="frame" x="-391" y="-111" width="1200" height="1200"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k90-nq-1f0">
-                                <rect key="frame" x="97" y="223" width="127" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="写真を撮る">
-                                    <color key="titleColor" red="0.72232262599999997" green="0.87359805079999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgB-Tl-tO6">
+                                <rect key="frame" x="-16" y="347" width="353" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="353" id="JRH-cD-qTj"/>
+                                    <constraint firstAttribute="height" constant="43" id="jRv-0z-7Ma"/>
+                                </constraints>
+                                <state key="normal" image="button2.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="Camera:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="46Y-Jj-H2K"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5F-1I-QSb">
-                                <rect key="frame" x="50" y="329" width="221" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="アルバムから選択する">
-                                    <color key="titleColor" red="0.72232262599999997" green="0.87359805079999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6E-Zb-voC">
+                                <rect key="frame" x="-24" y="204" width="368" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="368" id="K70-XF-eGO"/>
+                                    <constraint firstAttribute="height" constant="46" id="X1s-OC-Tk7"/>
+                                </constraints>
+                                <state key="normal" image="button1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="Album:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="El1-8H-Ape"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="k90-nq-1f0" secondAttribute="centerX" id="t1l-1b-T98"/>
-                            <constraint firstAttribute="centerX" secondItem="F5F-1I-QSb" secondAttribute="centerX" id="t5S-5V-SPF"/>
-                            <constraint firstAttribute="centerY" secondItem="F5F-1I-QSb" secondAttribute="centerY" constant="-60" id="v2X-uI-jQL"/>
-                            <constraint firstAttribute="centerY" secondItem="k90-nq-1f0" secondAttribute="centerY" constant="46" id="xwq-RN-c53"/>
+                            <constraint firstAttribute="centerX" secondItem="I6E-Zb-voC" secondAttribute="centerX" id="D2A-ie-RG4"/>
+                            <constraint firstAttribute="centerX" secondItem="aY3-S2-R0J" secondAttribute="centerX" constant="-49" id="Z7O-Uj-fGf"/>
+                            <constraint firstAttribute="centerX" secondItem="bgB-Tl-tO6" secondAttribute="centerX" id="gbq-Qh-XjU"/>
+                            <constraint firstAttribute="centerY" secondItem="bgB-Tl-tO6" secondAttribute="centerY" constant="-84.5" id="gnq-Jn-eFj"/>
+                            <constraint firstAttribute="centerY" secondItem="I6E-Zb-voC" secondAttribute="centerY" constant="57" id="sbF-GC-fR8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fkN-3q-xeq"/>
                     <connections>
-                        <outlet property="starView" destination="Vvk-iT-OPd" id="txu-ej-Z52"/>
+                        <outlet property="starView" destination="aY3-S2-R0J" id="l24-b2-H0s"/>
                         <segue destination="kl6-lz-0SI" kind="push" identifier="toEditStar" id="mkf-1K-e8W"/>
                     </connections>
                 </viewController>
@@ -137,7 +136,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="spcback2.jpg" width="1200" height="1200"/>
+        <image name="button1.png" width="640" height="80"/>
+        <image name="button2.png" width="640" height="80"/>
+        <image name="spcback3.jpg" width="1200" height="1200"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

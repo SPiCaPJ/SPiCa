@@ -26,7 +26,9 @@
 		205206C719D702F100D2DEE9 /* hoshi99.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206BA19D702F100D2DEE9 /* hoshi99.png */; };
 		205206C919D7030200D2DEE9 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205206C819D7030200D2DEE9 /* opencv2.framework */; };
 		205206CB19D704C600D2DEE9 /* hisyatai1.png in Resources */ = {isa = PBXBuildFile; fileRef = 205206CA19D704C600D2DEE9 /* hisyatai1.png */; };
-		3B30782519E953F200DB7592 /* spcback2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B30782419E953F200DB7592 /* spcback2.jpg */; };
+		3B874C4619EA015000EDDE68 /* spcback3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B874C4519EA015000EDDE68 /* spcback3.jpg */; };
+		3B874C4819EA0DD800EDDE68 /* button1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B874C4719EA0DD800EDDE68 /* button1.png */; };
+		3B874C4A19EA0DE200EDDE68 /* button2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B874C4919EA0DE200EDDE68 /* button2.png */; };
 		87188F6219B9C8300073D35C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87188F6119B9C8300073D35C /* Foundation.framework */; };
 		87188F6419B9C8300073D35C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87188F6319B9C8300073D35C /* CoreGraphics.framework */; };
 		87188F6619B9C8300073D35C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87188F6519B9C8300073D35C /* UIKit.framework */; };
@@ -77,7 +79,9 @@
 		205206BA19D702F100D2DEE9 /* hoshi99.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoshi99.png; sourceTree = "<group>"; };
 		205206C819D7030200D2DEE9 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		205206CA19D704C600D2DEE9 /* hisyatai1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hisyatai1.png; sourceTree = "<group>"; };
-		3B30782419E953F200DB7592 /* spcback2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spcback2.jpg; sourceTree = "<group>"; };
+		3B874C4519EA015000EDDE68 /* spcback3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spcback3.jpg; sourceTree = "<group>"; };
+		3B874C4719EA0DD800EDDE68 /* button1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button1.png; sourceTree = "<group>"; };
+		3B874C4919EA0DE200EDDE68 /* button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button2.png; sourceTree = "<group>"; };
 		87188F5E19B9C8300073D35C /* SPiCa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPiCa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87188F6119B9C8300073D35C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		87188F6319B9C8300073D35C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -154,7 +158,9 @@
 		3B30782319E9538E00DB7592 /* design */ = {
 			isa = PBXGroup;
 			children = (
-				3B30782419E953F200DB7592 /* spcback2.jpg */,
+				3B874C4519EA015000EDDE68 /* spcback3.jpg */,
+				3B874C4719EA0DD800EDDE68 /* button1.png */,
+				3B874C4919EA0DE200EDDE68 /* button2.png */,
 			);
 			name = design;
 			sourceTree = "<group>";
@@ -320,22 +326,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B874C4A19EA0DE200EDDE68 /* button2.png in Resources */,
 				205206BE19D702F100D2DEE9 /* back4.png in Resources */,
 				205206BD19D702F100D2DEE9 /* back3.png in Resources */,
 				205206BB19D702F100D2DEE9 /* back1.png in Resources */,
 				205206BC19D702F100D2DEE9 /* back2.png in Resources */,
 				87188F7819B9C8300073D35C /* Main_iPad.storyboard in Resources */,
 				205206C719D702F100D2DEE9 /* hoshi99.png in Resources */,
-				3B30782519E953F200DB7592 /* spcback2.jpg in Resources */,
 				87188F7D19B9C8300073D35C /* Images.xcassets in Resources */,
 				87188F7519B9C8300073D35C /* Main_iPhone.storyboard in Resources */,
 				87188F6C19B9C8300073D35C /* InfoPlist.strings in Resources */,
 				205206CB19D704C600D2DEE9 /* hisyatai1.png in Resources */,
 				205206C019D702F100D2DEE9 /* hoshi01.png in Resources */,
 				205206BF19D702F100D2DEE9 /* back5.png in Resources */,
+				3B874C4619EA015000EDDE68 /* spcback3.jpg in Resources */,
 				205206C219D702F100D2DEE9 /* hoshi12.png in Resources */,
 				205206C119D702F100D2DEE9 /* hoshi11.png in Resources */,
 				205206C519D702F100D2DEE9 /* hoshi22.png in Resources */,
+				3B874C4819EA0DD800EDDE68 /* button1.png in Resources */,
 				205206C619D702F100D2DEE9 /* hoshi23.png in Resources */,
 				205206C319D702F100D2DEE9 /* hoshi13.png in Resources */,
 				205206C419D702F100D2DEE9 /* hoshi21.png in Resources */,
