@@ -29,6 +29,8 @@
 		3B874C4619EA015000EDDE68 /* spcback3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B874C4519EA015000EDDE68 /* spcback3.jpg */; };
 		3B874C4819EA0DD800EDDE68 /* button1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B874C4719EA0DD800EDDE68 /* button1.png */; };
 		3B874C4A19EA0DE200EDDE68 /* button2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B874C4919EA0DE200EDDE68 /* button2.png */; };
+		3B874C4C19EA9F8C00EDDE68 /* button3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B874C4B19EA9F8C00EDDE68 /* button3.png */; };
+		3B874C4E19EA9F9300EDDE68 /* button4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B874C4D19EA9F9300EDDE68 /* button4.png */; };
 		87188F6219B9C8300073D35C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87188F6119B9C8300073D35C /* Foundation.framework */; };
 		87188F6419B9C8300073D35C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87188F6319B9C8300073D35C /* CoreGraphics.framework */; };
 		87188F6619B9C8300073D35C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87188F6519B9C8300073D35C /* UIKit.framework */; };
@@ -82,6 +84,8 @@
 		3B874C4519EA015000EDDE68 /* spcback3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spcback3.jpg; sourceTree = "<group>"; };
 		3B874C4719EA0DD800EDDE68 /* button1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button1.png; sourceTree = "<group>"; };
 		3B874C4919EA0DE200EDDE68 /* button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button2.png; sourceTree = "<group>"; };
+		3B874C4B19EA9F8C00EDDE68 /* button3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button3.png; sourceTree = "<group>"; };
+		3B874C4D19EA9F9300EDDE68 /* button4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button4.png; sourceTree = "<group>"; };
 		87188F5E19B9C8300073D35C /* SPiCa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPiCa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87188F6119B9C8300073D35C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		87188F6319B9C8300073D35C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -160,6 +164,8 @@
 			children = (
 				3B874C4519EA015000EDDE68 /* spcback3.jpg */,
 				3B874C4719EA0DD800EDDE68 /* button1.png */,
+				3B874C4B19EA9F8C00EDDE68 /* button3.png */,
+				3B874C4D19EA9F9300EDDE68 /* button4.png */,
 				3B874C4919EA0DE200EDDE68 /* button2.png */,
 			);
 			name = design;
@@ -333,8 +339,10 @@
 				205206BC19D702F100D2DEE9 /* back2.png in Resources */,
 				87188F7819B9C8300073D35C /* Main_iPad.storyboard in Resources */,
 				205206C719D702F100D2DEE9 /* hoshi99.png in Resources */,
+				3B874C4E19EA9F9300EDDE68 /* button4.png in Resources */,
 				87188F7D19B9C8300073D35C /* Images.xcassets in Resources */,
 				87188F7519B9C8300073D35C /* Main_iPhone.storyboard in Resources */,
+				3B874C4C19EA9F8C00EDDE68 /* button3.png in Resources */,
 				87188F6C19B9C8300073D35C /* InfoPlist.strings in Resources */,
 				205206CB19D704C600D2DEE9 /* hisyatai1.png in Resources */,
 				205206C019D702F100D2DEE9 /* hoshi01.png in Resources */,

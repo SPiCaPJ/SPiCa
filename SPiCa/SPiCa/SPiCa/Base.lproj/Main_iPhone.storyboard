@@ -20,40 +20,40 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" image="spcback3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aY3-S2-R0J">
                                 <rect key="frame" x="-391" y="-111" width="1200" height="1200"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgB-Tl-tO6">
-                                <rect key="frame" x="-16" y="347" width="353" height="43"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NiA-aB-dg4">
+                                <rect key="frame" x="-29" y="197" width="379" height="47"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="353" id="JRH-cD-qTj"/>
-                                    <constraint firstAttribute="height" constant="43" id="jRv-0z-7Ma"/>
+                                    <constraint firstAttribute="height" constant="47" id="g5i-uB-9mB"/>
+                                    <constraint firstAttribute="width" constant="379" id="xac-3j-DNP"/>
                                 </constraints>
-                                <state key="normal" image="button2.png">
+                                <state key="normal" image="button3.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Album:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="n6E-fY-kTu"/>
+                                    <action selector="Camera:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wuB-5Q-beB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6E-Zb-voC">
-                                <rect key="frame" x="-24" y="204" width="368" height="46"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XX-Xu-Zzf">
+                                <rect key="frame" x="-30" y="330" width="381" height="46"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="368" id="K70-XF-eGO"/>
-                                    <constraint firstAttribute="height" constant="46" id="X1s-OC-Tk7"/>
+                                    <constraint firstAttribute="width" constant="381" id="XS3-Hm-Ao7"/>
+                                    <constraint firstAttribute="height" constant="46" id="rx3-8j-01B"/>
                                 </constraints>
-                                <state key="normal" image="button1.png">
+                                <state key="normal" image="button4.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Camera:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JHb-pJ-Zeh"/>
+                                    <action selector="Album:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kHD-ft-RdU"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="I6E-Zb-voC" secondAttribute="centerX" id="D2A-ie-RG4"/>
+                            <constraint firstAttribute="centerY" secondItem="9XX-Xu-Zzf" secondAttribute="centerY" constant="-69" id="3s1-zW-Nuw"/>
+                            <constraint firstAttribute="centerX" secondItem="NiA-aB-dg4" secondAttribute="centerX" id="3wl-ZF-m1s"/>
+                            <constraint firstAttribute="centerX" secondItem="9XX-Xu-Zzf" secondAttribute="centerX" id="EAn-pR-ijS"/>
                             <constraint firstAttribute="centerX" secondItem="aY3-S2-R0J" secondAttribute="centerX" constant="-49" id="Z7O-Uj-fGf"/>
-                            <constraint firstAttribute="centerX" secondItem="bgB-Tl-tO6" secondAttribute="centerX" id="gbq-Qh-XjU"/>
-                            <constraint firstAttribute="centerY" secondItem="bgB-Tl-tO6" secondAttribute="centerY" constant="-84.5" id="gnq-Jn-eFj"/>
-                            <constraint firstAttribute="centerY" secondItem="I6E-Zb-voC" secondAttribute="centerY" constant="57" id="sbF-GC-fR8"/>
+                            <constraint firstAttribute="centerY" secondItem="NiA-aB-dg4" secondAttribute="centerY" constant="63.5" id="iE4-yj-gqQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fkN-3q-xeq"/>
@@ -64,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="370" y="-248"/>
+            <point key="canvasLocation" x="370" y="-197"/>
         </scene>
         <!--Edit Star View Controller-->
         <scene sceneID="Fpe-WV-SnX">
@@ -142,8 +142,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="button1.png" width="640" height="80"/>
-        <image name="button2.png" width="640" height="80"/>
+        <image name="button3.png" width="640" height="80"/>
+        <image name="button4.png" width="640" height="80"/>
         <image name="spcback3.jpg" width="1200" height="1200"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
