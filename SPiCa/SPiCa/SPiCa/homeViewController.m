@@ -43,6 +43,58 @@ UIImage *selectedImage;
     return UIStatusBarStyleLightContent;
 }
 
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    sleep(2);
+    _line.hidden = NO;
+    
+    _line.center = [self randomPoint];
+    
+    CGPoint aPoint = [self randomPoint];
+    
+    
+    CGFloat angle = atan2(aPoint.y - _line.center.y,aPoint.x - _line.center.x);
+    _line.transform = CGAffineTransformMakeRotation(angle);
+    
+    
+    [UIView animateWithDuration:0.1
+                          delay:0
+                        options:0
+                     animations:^{
+                         _line.center = aPoint;
+                     }
+                     completion:^(BOOL finished) {
+                         _line.hidden = YES;
+                     }];
+    
+    
+    
+}
+
+
+-(CGPoint)randomPoint
+
+{
+    CGPoint pt;
+    
+    int hight = self.view.bounds.size.height;
+    int y = arc4random()%hight;
+    
+    int isLeft = arc4random()%2;
+    if(isLeft){
+        pt = CGPointMake(0,y);
+    }
+    else{
+        pt = CGPointMake(self.view.bounds.size.width  , y);
+    }
+    return pt;
+}
+
+
 //メニュー画面が呼び出される度、画像回転
 -(void)viewWillAppear:(BOOL)animated
 {

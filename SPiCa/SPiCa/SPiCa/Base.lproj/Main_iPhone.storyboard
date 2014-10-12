@@ -46,6 +46,13 @@
                                     <action selector="Album:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kHD-ft-RdU"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="LRS-EF-h0R">
+                                <rect key="frame" x="44" y="104" width="200" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="04X-bn-E0T"/>
+                                    <constraint firstAttribute="height" constant="1" id="PLW-SP-5j9"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -58,6 +65,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="fkN-3q-xeq"/>
                     <connections>
+                        <outlet property="line" destination="LRS-EF-h0R" id="LVy-dh-6dr"/>
                         <outlet property="starView" destination="aY3-S2-R0J" id="l24-b2-H0s"/>
                         <segue destination="kl6-lz-0SI" kind="push" identifier="toEditStar" id="mkf-1K-e8W"/>
                     </connections>
@@ -144,6 +152,7 @@
     <resources>
         <image name="button3.png" width="640" height="80"/>
         <image name="button4.png" width="640" height="80"/>
+        <image name="line.png" width="200" height="20"/>
         <image name="spcback3.jpg" width="1200" height="1200"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

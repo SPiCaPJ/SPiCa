@@ -14,6 +14,8 @@
 }
 @property (weak, nonatomic) IBOutlet UIImageView *starView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *line;
+
 //カメラを起動する
 - (IBAction)Camera:(id)sender;
 
