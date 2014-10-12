@@ -29,6 +29,9 @@
                                 <state key="normal" image="button2.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Album:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="n6E-fY-kTu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6E-Zb-voC">
                                 <rect key="frame" x="-24" y="204" width="368" height="46"/>
@@ -39,6 +42,9 @@
                                 <state key="normal" image="button1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Camera:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JHb-pJ-Zeh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
