@@ -47,9 +47,8 @@ UIImage *selectedImage;
     return YES;
 }
 
-- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
-{
-    sleep(2);
+
+-(void)hoge:(NSTimer*)timer{
     _line.hidden = NO;
     
     _line.center = [self randomPoint];
@@ -69,11 +68,13 @@ UIImage *selectedImage;
                      }
                      completion:^(BOOL finished) {
                          _line.hidden = YES;
+                         
                      }];
-    
-    
-    
 }
+
+
+
+
 
 
 -(CGPoint)randomPoint
@@ -109,6 +110,16 @@ UIImage *selectedImage;
     rotationAnimation.repeatCount = HUGE_VALF;
     
     [_starView.layer addAnimation:rotationAnimation forKey:@"rotateAnimation"];
+    
+    
+    NSTimer *tm =
+    [NSTimer
+     scheduledTimerWithTimeInterval:10.0f
+     target:self
+     selector:@selector(hoge:)
+     userInfo:nil
+     repeats:YES
+     ];
     
     
     //ナビゲーションバーを非表示
