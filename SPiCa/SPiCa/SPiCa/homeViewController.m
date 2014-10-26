@@ -96,7 +96,7 @@ UIImage *selectedImage;
 }
 
 
-//メニュー画面が呼び出される度、画像回転
+//メニュー画面が呼び出される度
 -(void)viewWillAppear:(BOOL)animated
 {
     
@@ -112,7 +112,7 @@ UIImage *selectedImage;
     [_starView.layer addAnimation:rotationAnimation forKey:@"rotateAnimation"];
     
     
-    NSTimer *tm =
+    //NSTimer *tm =
     [NSTimer
      scheduledTimerWithTimeInterval:10.0f
      target:self
@@ -186,19 +186,19 @@ UIImage *selectedImage;
     [self dismissViewControllerAnimated:YES completion:nil];
     
     // オリジナル画像
-    UIImage *originalImage = (UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *saveImage = (UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage];
     // 編集画像（いらない、送るのは全てオリジナル）
-    UIImage *editedImage = (UIImage *)[info objectForKey:UIImagePickerControllerEditedImage];
-    UIImage *saveImage;
-    
-    if(editedImage)
-    {
-        saveImage = editedImage;
-    }
-    else
-    {
-        saveImage = originalImage;
-    }
+//    UIImage *editedImage = (UIImage *)[info objectForKey:UIImagePickerControllerEditedImage];
+//    UIImage *saveImage;
+//    
+//    if(editedImage)
+//    {
+//        saveImage = editedImage;
+//    }
+//    else
+//    {
+//        saveImage = originalImage;
+//    }
     
     //以下UIImageViewを配置して、保存をする動作
     //サンプルではトリミングをONにしていたが、今回は必要ないので
