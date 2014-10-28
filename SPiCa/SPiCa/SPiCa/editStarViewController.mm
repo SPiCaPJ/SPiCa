@@ -70,7 +70,7 @@ NSMutableArray *stars;
     
     
     //領域分割
-    self.picture = [UIImage imageNamed:@"hisyatai1.png"];
+    //self.picture = [UIImage imageNamed:@"hisyatai1.png"];
     
     showImageView.image = [self regionSegmentation:self.picture];
     

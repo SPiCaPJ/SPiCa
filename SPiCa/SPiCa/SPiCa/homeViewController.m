@@ -16,6 +16,8 @@
 //撮影もしくは選択された画像
 UIImage *selectedImage;
 
+NSTimer *tm;
+
 @implementation homeViewController
 
 
@@ -52,8 +54,17 @@ UIImage *selectedImage;
     _line.hidden = NO;
     
     _line.center = [self randomPoint];
+    int hight =self.view.bounds.size.height;
+    CGPoint aPoint;
+    if(_line.center.x == 0)
+    {
+        aPoint = CGPointMake(self.view.bounds.size.width,arc4random()%hight);
+    }
+    else
+    {
+        aPoint = CGPointMake(0,arc4random()%hight);
+    }
     
-    CGPoint aPoint = [self randomPoint];
     
     
     CGFloat angle = atan2(aPoint.y - _line.center.y,aPoint.x - _line.center.x);
@@ -112,9 +123,9 @@ UIImage *selectedImage;
     [_starView.layer addAnimation:rotationAnimation forKey:@"rotateAnimation"];
     
     
-    //NSTimer *tm =
+     tm =
     [NSTimer
-     scheduledTimerWithTimeInterval:10.0f
+     scheduledTimerWithTimeInterval:5.0f
      target:self
      selector:@selector(hoge:)
      userInfo:nil
@@ -126,8 +137,12 @@ UIImage *selectedImage;
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
-
-
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [tm invalidate];
+    tm = nil;
+}
 
 
 //写真を撮る押下
