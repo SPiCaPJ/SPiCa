@@ -11,10 +11,14 @@
 @interface homeViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate>
 {
     UIPopoverController *popover;
+
 }
 @property (weak, nonatomic) IBOutlet UIImageView *starView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *line;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicatorView;
+
 
 //カメラを起動する
 - (IBAction)Camera:(id)sender;
