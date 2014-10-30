@@ -100,7 +100,7 @@ UIImageView *showImageView;
 // saveボタンが押された時の処理
 - (void)save
 {
-    ////保存する画像を指定
+    ////保存する画像を指定、UIImageで欲しい
     //UIImage *image = [UIImage imageNamed:_imageName];
     //画像を保存する
     //UIImageWriteToSavedPhotosAlbum(showImageView, self, NULL, NULL);
@@ -133,8 +133,9 @@ UIImageView *showImageView;
 - (void)activ
 {
     //投稿するテキスト
-    NSString *sharedText = @"テキスト #SPiCa";
-    //投稿するコンテンツ、ここに画像を記載
+    NSString *sharedText = @"#SPiCa";
+    //投稿するコンテンツ、ここにUIImageを記載
+    //NSArray *activityItems = @[sharedText, showImageView];
     NSArray *activityItems = @[sharedText];
     
     //連携できるアプリの取得
