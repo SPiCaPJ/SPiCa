@@ -51,8 +51,48 @@ UIImageView *showImageView;
     
 }
 
+
+//完了ボタン
+- (IBAction)actionsocial:(id)sender {
+    
+    //最初のアラート
+    UIAlertController *alert1 =
+    [UIAlertController alertControllerWithTitle:@"確認"
+                                        message:@"加工を終了して、画像を保存しますか？" preferredStyle:UIAlertControllerStyleAlert];
+    
+    //押されたときのハンドラ
+    [alert1 addAction:[UIAlertAction actionWithTitle:@"Cancel"
+                                               style:UIAlertActionStyleDestructive
+                                             handler:^(UIAlertAction *action) {
+                                                 
+                                                 
+                                                 NSLog(@"Cancel pushed");
+                                                 [self cancel];
+                                             }]];
+    [alert1 addAction:[UIAlertAction actionWithTitle:@"OK"
+                                               style:UIAlertActionStyleDefault
+                                             handler:^(UIAlertAction *action) {
+                                                 NSLog(@"OK pushed");
+                                                 [self save];
+                                             }]];
+    
+    //アラート表示
+    [self presentViewController:alert1 animated:YES completion:nil];
+    
+    
+}
+
+
+
+
 // cancelボタンが押された時の処理
 - (void)cancel
+{
+    return;
+}
+
+// cancelボタンが押された時の処理
+- (void)finish
 {
     return;
 }
@@ -74,7 +114,7 @@ UIImageView *showImageView;
                                                style:UIAlertActionStyleDestructive
                                              handler:^(UIAlertAction *action) {
                                                  NSLog(@"Cancel pushed");
-                                                 [self cancel];
+                                                 [self finish];
                                              }]];
     
     [alert2 addAction:[UIAlertAction actionWithTitle:@"OK"
@@ -86,6 +126,7 @@ UIImageView *showImageView;
                                              }]];
     
     [self presentViewController:alert2 animated:YES completion:nil];
+
 }
 
 // activボタンが押された時の処理
@@ -100,44 +141,32 @@ UIImageView *showImageView;
     UIActivity *activity = [[UIActivity alloc] init];
     NSArray *appActivivities = @[activity];
     
+    
+    
+    
+    
     //アクティビティ作成
     UIActivityViewController *activityVC =[[UIActivityViewController alloc]
                                            initWithActivityItems:
                                            activityItems
                                            applicationActivities:
                                            appActivivities];
+    
+    
+    // activity処理完了時の動作
+    void (^completionHandler)(NSString *activityType, BOOL completed) = ^(NSString *activityType, BOOL completed){
+        NSLog(@"completetion handler");
+       [self finish];
+    };
+    
+    activityVC.completionHandler = completionHandler;
+    
+    
     //表示
     [self presentViewController:activityVC animated:YES completion:nil];
+    
 }
 
-//完了ボタン
-- (IBAction)actionsocial:(id)sender {
-    
-    //最初のアラート
-    UIAlertController *alert1 =
-    [UIAlertController alertControllerWithTitle:@"確認"
-                                        message:@"加工を終了して、画像を保存しますか？" preferredStyle:UIAlertControllerStyleAlert];
-    
-    //押されたときのハンドラ
-    [alert1 addAction:[UIAlertAction actionWithTitle:@"Cancel"
-                                              style:UIAlertActionStyleDestructive
-                                            handler:^(UIAlertAction *action) {
-                                          
-                                                
-                                                NSLog(@"Cancel pushed");
-                                                 [self cancel];
-                                            }]];
-    [alert1 addAction:[UIAlertAction actionWithTitle:@"OK"
-                                               style:UIAlertActionStyleDefault
-                                             handler:^(UIAlertAction *action) {
-                                                 NSLog(@"OK pushed");
-                                                 [self save];
-                                             }]];
-    
-    //アラート表示
-    [self presentViewController:alert1 animated:YES completion:nil];
-    
 
-    }
 @end
 
