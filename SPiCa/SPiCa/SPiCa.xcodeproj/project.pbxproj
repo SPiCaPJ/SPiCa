@@ -45,6 +45,7 @@
 		87188F8619B9C8300073D35C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87188F6519B9C8300073D35C /* UIKit.framework */; };
 		87188F8E19B9C8300073D35C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87188F8C19B9C8300073D35C /* InfoPlist.strings */; };
 		87188F9019B9C8300073D35C /* SPiCaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87188F8F19B9C8300073D35C /* SPiCaTests.m */; };
+		87D0C39B1A039FF400E8DB4E /* PalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D0C39A1A039FF400E8DB4E /* PalletViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,8 @@
 		87188F8B19B9C8300073D35C /* SPiCaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SPiCaTests-Info.plist"; sourceTree = "<group>"; };
 		87188F8D19B9C8300073D35C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		87188F8F19B9C8300073D35C /* SPiCaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPiCaTests.m; sourceTree = "<group>"; };
+		87D0C3991A039FF400E8DB4E /* PalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PalletViewController.h; sourceTree = "<group>"; };
+		87D0C39A1A039FF400E8DB4E /* PalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PalletViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +226,8 @@
 				205206A419D702E200D2DEE9 /* DragView.m */,
 				87188F7C19B9C8300073D35C /* Images.xcassets */,
 				87188F6819B9C8300073D35C /* Supporting Files */,
+				87D0C3991A039FF400E8DB4E /* PalletViewController.h */,
+				87D0C39A1A039FF400E8DB4E /* PalletViewController.m */,
 			);
 			path = SPiCa;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				205206A819D702E200D2DEE9 /* editLineViewController.m in Sources */,
+				87D0C39B1A039FF400E8DB4E /* PalletViewController.m in Sources */,
 				87188F7219B9C8300073D35C /* AppDelegate.m in Sources */,
 				205206A719D702E200D2DEE9 /* DragView.m in Sources */,
 				87188F6E19B9C8300073D35C /* main.m in Sources */,
@@ -520,7 +526,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SPiCa/SPiCa-Prefix.pch";
 				INFOPLIST_FILE = "SPiCa/SPiCa-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -538,7 +544,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SPiCa/SPiCa-Prefix.pch";
 				INFOPLIST_FILE = "SPiCa/SPiCa-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

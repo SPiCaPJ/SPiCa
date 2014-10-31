@@ -54,7 +54,7 @@ UIImageView *showImageView;
 
 //完了ボタン
 - (IBAction)actionsocial:(id)sender {
-    
+/*
     //最初のアラート
     UIAlertController *alert1 =
     [UIAlertController alertControllerWithTitle:@"確認"
@@ -79,7 +79,7 @@ UIImageView *showImageView;
     //アラート表示
     [self presentViewController:alert1 animated:YES completion:nil];
     
-    
+  */
 }
 
 
@@ -105,7 +105,7 @@ UIImageView *showImageView;
     //画像を保存する
     //UIImageWriteToSavedPhotosAlbum(showImageView, self, NULL, NULL);
     
-    
+   /*
     //次のアラート
     UIAlertController *alert2 =
     [UIAlertController alertControllerWithTitle:@"完了"
@@ -126,7 +126,7 @@ UIImageView *showImageView;
                                              }]];
     
     [self presentViewController:alert2 animated:YES completion:nil];
-
+*/
 }
 
 // activボタンが押された時の処理
