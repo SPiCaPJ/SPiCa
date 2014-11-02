@@ -13,19 +13,24 @@
 		<key>39743189314708C3DE9595A26FD911D6512D5822</key>
 		<string>https://github.com/SPiCaPJ/SPiCa.git</string>
 		<key>ae26ec68-fddc-0a1e-2d08-ce57b7db7bff++505</key>
-		<string>https://github.com/SPiCaPJ/SPiCa.git</string>
+		<string>https://github.com/6tanzono/SPiCa/trunk</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SPiCa/SPiCa/SPiCa.xcodeproj/project.xcworkspace</string>
+	<string>SPiCa/SPiCa.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>39743189314708C3DE9595A26FD911D6512D5822</key>
-		<string>../../../../..</string>
-		<key>ae26ec68-fddc-0a1e-2d08-ce57b7db7bff++505</key>
 		<string>../../../..</string>
+		<key>ae26ec68-fddc-0a1e-2d08-ce57b7db7bff++505</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>ae26ec68-fddc-0a1e-2d08-ce57b7db7bff++505</key>
+		<string>https://github.com/6tanzono/SPiCa</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/SPiCaPJ/SPiCa.git</string>
+	<string>https://github.com/6tanzono/SPiCa/trunk/SPiCa/SPiCa.xcodeproj</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -42,7 +47,7 @@
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
+			<string>public.vcs.subversion</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>ae26ec68-fddc-0a1e-2d08-ce57b7db7bff++505</string>
 			<key>IDESourceControlWCCName</key>
