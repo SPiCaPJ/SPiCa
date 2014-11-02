@@ -84,8 +84,8 @@ UIImageView *showImageView;
     //星座標を取得
     //NSValue* Starvalue = [NSValue new];
     CGPoint Starpoints[100]={0};
-    float StarWidth[100]={0};
-    float StarHeight[100]={0};
+    //float StarWidth[100]={0};
+    //float StarHeight[100]={0};
     
     //星に収束したかを表すフラグ
     bool touchflag = false;
@@ -95,8 +95,8 @@ UIImageView *showImageView;
     for(DragView *StarView in self.stars){
         //Starpoints[starCount1++] = StarView.frame.origin;
         Starpoints[starCount1] = StarView.frame.origin;
-        StarWidth[starCount1] = StarView.frame.size.width;
-        StarHeight[starCount1] = StarView.frame.size.height;
+        //StarWidth[starCount1] = StarView.frame.size.width/2;
+        //StarHeight[starCount1] = StarView.frame.size.height/2;
         starCount1++;
     }
     
@@ -105,11 +105,12 @@ UIImageView *showImageView;
     for(starCount2 = 0; starCount2<starCount1;starCount2++){
         //CGRect rc = CGRectMake(Starpoints[starCount2].x,Starpoints[starCount2].y,100,100);
         
-        //float rx = location.x - Starpoints[starCount2].x-10;
-        //float ry = location.y - Starpoints[starCount2].y+34;
+        float rx = location.x - Starpoints[starCount2].x-10;
+        float ry = location.y - Starpoints[starCount2].y+34;
         
-        float rx = location.x - Starpoints[starCount2].x-StarWidth[starCount2];
-        float ry = location.y - Starpoints[starCount2].y+StarHeight[starCount2];
+        //星の中心をとれるかと思ったが下にずれてしまっている
+        //float rx = location.x - Starpoints[starCount2].x-StarWidth[starCount2];
+        //float ry = location.y - Starpoints[starCount2].y+StarHeight[starCount2];
         
         //距離rを求める
         float r = sqrt(rx*rx + ry*ry);
@@ -118,11 +119,13 @@ UIImageView *showImageView;
         if(r <= 10) {
             NSLog(@"this touch! Stars!");
             touchflag = true;
-            location.x = Starpoints[starCount2].x+StarWidth[starCount2];
-            location.y = Starpoints[starCount2].y-StarHeight[starCount2];
             
-            //location.x = Starpoints[starCount2].x+10;
-            //location.y = Starpoints[starCount2].y-34;
+            //星の中心をとれるかと思ったが下にずれてしまっている
+            //location.x = Starpoints[starCount2].x+StarWidth[starCount2];
+            //location.y = Starpoints[starCount2].y+StarHeight[starCount2];
+            
+            location.x = Starpoints[starCount2].x+10;
+            location.y = Starpoints[starCount2].y-34;
             
         }
         

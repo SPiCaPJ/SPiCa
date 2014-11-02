@@ -6,15 +6,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SPiCa/editLineViewController.m"
-            timestampString = "436626862.688033"
+            timestampString = "436627938.645517"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "@implementation editLineViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -26,11 +26,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SPiCa/editLineViewController.m"
-            timestampString = "436627259.999296"
+            timestampString = "436627938.645517"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-touchesBegan:withEvent:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SPiCa/editLineViewController.m"
+            timestampString = "436628046.811274"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
             endingLineNumber = "97"
+            landmarkName = "-touchesBegan:withEvent:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SPiCa/editLineViewController.m"
+            timestampString = "436628388.842637"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "-touchesBegan:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
