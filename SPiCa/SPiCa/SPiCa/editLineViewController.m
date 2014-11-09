@@ -8,6 +8,7 @@
 
 #import "editLineViewController.h"
 #import "DragView.h"
+#import "homeViewController.h"
 
 @interface editLineViewController();
 @property  NSMutableArray *TouchArray;
@@ -324,26 +325,23 @@ UIImage *picture;
     
 }
 
+//アラートの処理
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if(firstAlert == alertView){
         switch (buttonIndex) {
             case 0:
-                NSLog(@"firstAlertのいいえをクリックしました");
-                 [self cancel];
+                [self cancel];
                 break;
             case 1:
-                NSLog(@"firstAlertのはいをクリックしました");
                 [self save];
                 break;
         }
     } else if(secondAlert == alertView){
         switch (buttonIndex) {
             case 0:
-                NSLog(@"secondAlertのいいえをクリックしました");
                 [self finish];
                 break;
             case 1:
-                NSLog(@"secondAlertのはいをクリックしました");
                 [self active];
                 break;
         }
@@ -359,16 +357,15 @@ UIImage *picture;
 // finishボタンが押された時の処理
 - (void)finish
 {
+    homeViewController *home = [self.storyboard instantiateViewControllerWithIdentifier:@"menu"];
+    [self presentViewController:home animated:YES completion:nil];
     return;
 }
 
 // saveボタンが押された時の処理
 - (void)save
 {
-    ////保存する画像を指定、UIImageで欲しい
-    //UIImage *image = [UIImage imageNamed:_imageName];
     //画像を保存する
-    //UIImageWriteToSavedPhotosAlbum(showImageView, self, NULL, NULL);
     picture = [self captureImage];
     UIImageWriteToSavedPhotosAlbum(picture, self, NULL, NULL);
     
@@ -393,9 +390,6 @@ UIImage *picture;
     //連携できるアプリの取得
     UIActivity *activity = [[UIActivity alloc] init];
     NSArray *appActivivities = @[activity];
-    
-    
-    
     
     
     //アクティビティ作成

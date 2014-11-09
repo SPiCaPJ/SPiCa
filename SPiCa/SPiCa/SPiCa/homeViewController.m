@@ -52,6 +52,49 @@ UIAlertView *alert;
 }
 
 
+//メニュー画面が呼び出される度
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    [super viewWillAppear:animated];
+    
+    //背景の回転処理
+    CABasicAnimation* rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    
+    rotationAnimation.toValue = [NSNumber numberWithFloat:(M_PI / 180) * 360];
+    
+    rotationAnimation.duration = 300.0f;
+    
+    rotationAnimation.repeatCount = HUGE_VALF;
+    
+    [_starView.layer addAnimation:rotationAnimation forKey:@"rotateAnimation"];
+    
+    //10秒ごとに流れ星の処理を呼ぶ
+    tm =
+    [NSTimer
+     scheduledTimerWithTimeInterval:10.0f
+     target:self
+     selector:@selector(hoge:)
+     userInfo:nil
+     repeats:YES
+     ];
+    
+    
+    //ナビゲーションバーを非表示
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
+//メニュー画面が閉じるとき
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [tm invalidate];
+    tm = nil;
+    //くるくるを閉じる
+    [alert dismissWithClickedButtonIndex:0 animated:NO];
+    //ナビゲーションバーを表示
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
 
 //流れ星の処理
 -(void)hoge:(NSTimer*)timer{
@@ -108,51 +151,6 @@ UIAlertView *alert;
 }
 
 
-//メニュー画面が呼び出される度
--(void)viewWillAppear:(BOOL)animated
-{
-    
-    [super viewWillAppear:animated];
-    
-    //背景の回転処理
-    CABasicAnimation* rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    
-    rotationAnimation.toValue = [NSNumber numberWithFloat:(M_PI / 180) * 360];
-    
-    rotationAnimation.duration = 300.0f;
-    
-    rotationAnimation.repeatCount = HUGE_VALF;
-    
-    [_starView.layer addAnimation:rotationAnimation forKey:@"rotateAnimation"];
-   
-    //10秒ごとに流れ星の処理を呼ぶ
-    tm =
-    [NSTimer
-     scheduledTimerWithTimeInterval:10.0f
-     target:self
-     selector:@selector(hoge:)
-     userInfo:nil
-     repeats:YES
-     ];
-    
-    
-    //ナビゲーションバーを非表示
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
-}
-
-//メニュー画面が閉じるとき
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    [tm invalidate];
-    tm = nil;
-    
-    [alert dismissWithClickedButtonIndex:0 animated:NO];
-    //クルクルを閉じる
-    //[self.indicatorView stopAnimating];
-    //ナビゲーションバーを表示
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-}
 
 
 //写真を撮る押下
@@ -210,6 +208,8 @@ UIAlertView *alert;
     
     //モーダルを閉じる
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    //くるくる
     alert = [[UIAlertView alloc]initWithTitle:nil
                                                   message:@"読み込み中"
                                                  delegate:nil
@@ -247,7 +247,7 @@ UIAlertView *alert;
         editStarViewController *editStarViewController = [segue destinationViewController];
         //遷移先ビューの変数に値を渡す
         editStarViewController.picture = selectedImage;
-        //[self.indicatorView stopAnimating];
+        
     }
 }
 
