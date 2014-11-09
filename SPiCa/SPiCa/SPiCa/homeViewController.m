@@ -18,6 +18,8 @@ UIImage *selectedImage;
 
 NSTimer *tm;
 
+UIAlertView *alert;
+
 @implementation homeViewController
 
 
@@ -145,8 +147,9 @@ NSTimer *tm;
     [tm invalidate];
     tm = nil;
     
+    [alert dismissWithClickedButtonIndex:0 animated:NO];
     //クルクルを閉じる
-    [self.indicatorView stopAnimating];
+    //[self.indicatorView stopAnimating];
     //ナビゲーションバーを表示
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
@@ -207,9 +210,20 @@ NSTimer *tm;
     
     //モーダルを閉じる
     [self dismissViewControllerAnimated:YES completion:nil];
+    alert = [[UIAlertView alloc]initWithTitle:nil
+                                                  message:@"読み込み中"
+                                                 delegate:nil
+                                        cancelButtonTitle:nil
+                                        otherButtonTitles:nil, nil];
     
-    [self.indicatorView startAnimating];
-    [[NSRunLoop currentRunLoop]runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.0]];
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    //indicator.center = CGPointMake((self.view.bounds.size.width / 2), (self.view.bounds.size.height / 2));
+    indicator.color = [UIColor blueColor];
+    [indicator startAnimating];
+    
+    [alert setValue:indicator forKey:@"accessoryView"];
+    [alert show];
+
     // オリジナル画像
     UIImage *saveImage = (UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage];
     
@@ -218,6 +232,8 @@ NSTimer *tm;
     selectedImage = saveImage;
     //取得した画像を受け渡して、遷移する動作が入る
     [self performSegueWithIdentifier:@"toEditStar" sender:self];
+    
+
     
 }
 

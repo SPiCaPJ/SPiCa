@@ -18,8 +18,9 @@
 @implementation editLineViewController
 //ベースとなる画像
 UIImageView *showImageView;
-
-
+UIAlertView *firstAlert;
+UIAlertView *secondAlert;
+UIImage *picture;
 
 - (void)viewDidLoad
 {
@@ -312,36 +313,42 @@ UIImageView *showImageView;
 
 //完了ボタン
 - (IBAction)actionsocial:(id)sender {
-/*
-    //最初のアラート
-    UIAlertController *alert1 =
-    [UIAlertController alertControllerWithTitle:@"確認"
-                                        message:@"加工を終了して、画像を保存しますか？" preferredStyle:UIAlertControllerStyleAlert];
     
-    //押されたときのハンドラ
-    [alert1 addAction:[UIAlertAction actionWithTitle:@"Cancel"
-                                               style:UIAlertActionStyleDestructive
-                                             handler:^(UIAlertAction *action) {
-                                                 
-                                                 
-                                                 NSLog(@"Cancel pushed");
-                                                 [self cancel];
-                                             }]];
-    [alert1 addAction:[UIAlertAction actionWithTitle:@"OK"
-                                               style:UIAlertActionStyleDefault
-                                             handler:^(UIAlertAction *action) {
-                                                 NSLog(@"OK pushed");
-                                                 [self save];
-                                             }]];
+    firstAlert =
+    [[UIAlertView alloc] initWithTitle:@"確認"
+                               message:@"編集を終了して、画像を保存しますか？"
+                              delegate:self
+                     cancelButtonTitle:@"いいえ"
+                     otherButtonTitles:@"はい", nil];
+    [firstAlert show];
     
-    //アラート表示
-    [self presentViewController:alert1 animated:YES completion:nil];
-    
-  */
 }
 
-
-
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(firstAlert == alertView){
+        switch (buttonIndex) {
+            case 0:
+                NSLog(@"firstAlertのいいえをクリックしました");
+                 [self cancel];
+                break;
+            case 1:
+                NSLog(@"firstAlertのはいをクリックしました");
+                [self save];
+                break;
+        }
+    } else if(secondAlert == alertView){
+        switch (buttonIndex) {
+            case 0:
+                NSLog(@"secondAlertのいいえをクリックしました");
+                [self finish];
+                break;
+            case 1:
+                NSLog(@"secondAlertのはいをクリックしました");
+                [self active];
+                break;
+        }
+    }
+}
 
 // cancelボタンが押された時の処理
 - (void)cancel
@@ -349,7 +356,7 @@ UIImageView *showImageView;
     return;
 }
 
-// cancelボタンが押された時の処理
+// finishボタンが押された時の処理
 - (void)finish
 {
     return;
@@ -362,39 +369,26 @@ UIImageView *showImageView;
     //UIImage *image = [UIImage imageNamed:_imageName];
     //画像を保存する
     //UIImageWriteToSavedPhotosAlbum(showImageView, self, NULL, NULL);
+    picture = [self captureImage];
+    UIImageWriteToSavedPhotosAlbum(picture, self, NULL, NULL);
     
-   /*
-    //次のアラート
-    UIAlertController *alert2 =
-    [UIAlertController alertControllerWithTitle:@"完了"
-                                        message:@"画像を保存しました、SNSへ投稿しますか？" preferredStyle:UIAlertControllerStyleAlert];
-    [alert2 addAction:[UIAlertAction actionWithTitle:@"Cancel"
-                                               style:UIAlertActionStyleDestructive
-                                             handler:^(UIAlertAction *action) {
-                                                 NSLog(@"Cancel pushed");
-                                                 [self finish];
-                                             }]];
-    
-    [alert2 addAction:[UIAlertAction actionWithTitle:@"OK"
-                                               style:UIAlertActionStyleDefault
-                                             handler:^(UIAlertAction *action) {
-                                                 NSLog(@"OK pushed");
-                                                 [self activ];
-                                                 
-                                             }]];
-    
-    [self presentViewController:alert2 animated:YES completion:nil];
-*/
+    secondAlert =
+    [[UIAlertView alloc] initWithTitle:@"完了"
+                               message:@"保存しました、SNSへ投稿しますか？"
+                              delegate:self
+                     cancelButtonTitle:@"いいえ"
+                     otherButtonTitles:@"はい", nil];
+    [secondAlert show];
 }
 
-// activボタンが押された時の処理
-- (void)activ
+// activeボタンが押された時の処理
+- (void)active
 {
     //投稿するテキスト
     NSString *sharedText = @"#SPiCa";
     //投稿するコンテンツ、ここにUIImageを記載
     //NSArray *activityItems = @[sharedText, showImageView];
-    NSArray *activityItems = @[sharedText];
+    NSArray *activityItems = @[sharedText,picture];
     
     //連携できるアプリの取得
     UIActivity *activity = [[UIActivity alloc] init];
@@ -425,7 +419,34 @@ UIImageView *showImageView;
     [self presentViewController:activityVC animated:YES completion:nil];
     
 }
-
-
+//重なっているビューを一つのUIimageとして返すメソッド
+-(UIImage *)captureImage
+{
+    // 描画領域の設定
+    CGSize size = CGSizeMake(showImageView.frame.size.width , showImageView.frame.size.height);
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+    
+    // グラフィックスコンテキスト取得
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    // コンテキストの位置を切り取り開始位置に合わせる
+    CGPoint point = showImageView.frame.origin;
+    CGAffineTransform affineMoveLeftTop
+    = CGAffineTransformMakeTranslation(
+                                       -(int)point.x ,
+                                       -(int)point.y );
+    CGContextConcatCTM(context , affineMoveLeftTop );
+    
+    // viewから切り取る
+    [(CALayer*)self.view.layer renderInContext:context];
+    
+    // 切り取った内容をUIImageとして取得
+    UIImage *cnvImg = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // コンテキストの破棄
+    UIGraphicsEndImageContext();
+    
+    return cnvImg;
+}
 @end
 
