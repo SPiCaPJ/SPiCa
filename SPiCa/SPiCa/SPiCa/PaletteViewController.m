@@ -6,23 +6,23 @@
 //  Copyright (c) 2014年 島崎　恵美. All rights reserved.
 //
 
-#import "PalletViewController.h"
+#import "PaletteViewController.h"
 //#import "editStarViewController.h"
 
-@interface PalletViewController ()
+@interface PaletteViewController ()
 
 @end
 
-@implementation PalletViewController
+@implementation PaletteViewController
 
-@synthesize SC;
+//@synthesize SC;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if([self.a isEqualToString:( @"test")]){
-        SC.selectedSegmentIndex = 3;
-    }
+   // if([self.a isEqualToString:( @"test")]){
+    //    SC.selectedSegmentIndex = 3;
+   // }
     
     // Do any additional setup after loading the view.
 }
@@ -48,6 +48,7 @@
  */
 
 //Segmented Controlをタッチしたときの動作
+/*
 -(IBAction)SegChanged:(id)sender
 {
     switch (SC.selectedSegmentIndex) {
@@ -81,6 +82,20 @@
     }
     
 }
+ */
+-(IBAction)BackColorSegChanged:(id)sender{
+    
+}
+-(IBAction)StarColorSegChanged:(id)sender{
+    
+}
+-(IBAction)StarSegChanged:(id)sender{
+    
+}
+-(IBAction)StarSizeSegChanged:(id)sender{
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -89,6 +104,9 @@
 }
 
 
+-(IBAction)button_back{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 /*

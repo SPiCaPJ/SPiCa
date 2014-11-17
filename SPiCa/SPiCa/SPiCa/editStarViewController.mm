@@ -9,7 +9,7 @@
 #import "editStarViewController.h"
 #import "DragView.h"
 #import "editLineViewController.h"
-#import "PalletViewController.h"
+#import "PaletteViewController.h"
 // opencv の import
 #import <opencv2/opencv.hpp>
 #import <opencv2/highgui/ios.h>
@@ -257,10 +257,10 @@ NSMutableArray *stars;
         
     }
     else if ([[segue identifier] isEqualToString:@"aaaaa"] ){
-        PalletViewController *palletViewController = [segue destinationViewController];
+        PaletteViewController *paletteViewController = [segue destinationViewController];
         
-        palletViewController.a = @"test";
-        palletViewController.color = 1 ;
+        paletteViewController.a = @"test";
+        //paletteViewController.color = 1 ;
     }
 }
 
