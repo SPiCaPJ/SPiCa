@@ -63,6 +63,7 @@ NSMutableArray *stars;
     CGFloat availableWidth = screenWidth;
     
     //todoフッター部も設ける
+    self.view.frame = CGRectMake(0, statusBarHeight + navBarHeight, availableWidth, availableHeight);
     
     showImageView = [[UIImageView alloc] init];
     
@@ -70,28 +71,19 @@ NSMutableArray *stars;
     //todo
     //メソッドにして動的に変更
     //背景画像の追加
-    UIImageView *backView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back3.png"]];
-    backView.frame = CGRectMake(0, statusBarHeight + navBarHeight, availableWidth, availableHeight);
+    UIImageView *backView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back1.png"]];
+    
     backView.contentMode = UIViewContentModeScaleAspectFit;
     backView.tag = 0;
     [self.view addSubview:backView];
-    
+    [self.view sendSubviewToBack:backView];
     
     //領域分割
     //self.picture = [UIImage imageNamed:@"hisyatai1.png"];
     
     showImageView.image = [self regionSegmentation:self.picture];
     
-    
-    
     cv::Mat mat = [self matWithImage:showImageView.image];
-    
-    /*
-    // グレイスケール化してから適応的二値化
-    cv::cvtColor(mat, mat, CV_BGR2GRAY);
-    cv::adaptiveThreshold(mat, mat, 255, cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY, 7, 8);
-    showImageView.image = MatToUIImage(mat);
-    */
     
     // グレイスケール化してから大津法で二値化
     cv::cvtColor(mat, mat, CV_BGR2GRAY);
@@ -101,26 +93,6 @@ NSMutableArray *stars;
     
     //透過させる
     showImageView.alpha = 0.08;
-    
-    //CIFilterで合成
-    /*
-     CIImage *ciImage = [[CIImage alloc]initWithImage:[UIImage imageNamed:@"back1.png"]];
-    
-     CIFilter *ciFilter = [CIFilter filterWithName:@"CIAdditionCompositing" keysAndValues:kCIInputImageKey,[[CIImage alloc] initWithImage:showImageView.image],@"inputBackgroundImage",ciImage,nil];
-     CIContext *ciContext = [CIContext contextWithOptions:nil];
-     CGImageRef cgimg = [ciContext createCGImage:[ciFilter outputImage] fromRect:[[ciFilter outputImage] extent]];
-     showImageView.image = [UIImage imageWithCGImage:cgimg scale:1.0f orientation:UIImageOrientationUp];
-     CGImageRelease(cgimg);
-    */
-
-    /*
-    // ImageViewのサイズを取得する
-    CGSize size = showImageView.frame.size;
-     // 重ねて描画したい画像の配列を作成します
-    NSArray *images = @[showImageView.image,[UIImage imageNamed:@"hisyatai.png"]];
-     // 生成したUIImageオブジェクトをImageViewに設定する
-    showImageView.image = [self compositeImages:images size:size];
-    */
     
     //[showImageView setFrame:[[UIScreen mainScreen]applicationFrame]];
     
@@ -162,45 +134,7 @@ NSMutableArray *stars;
     UITouch* touch = [touches anyObject];
     CGPoint point = [touch locationInView:self.view];
     
-    //配置する星のクラスの設定
-    currentStampView = [[DragView alloc] initWithFrame:CGRectMake(point.x-10, point.y-10, 20, 20)];
-    
-    /*
-    UIImage *originImage = [UIImage imageNamed:@"kingyo.png"];
-    CIImage *filteredImage = [[CIImage alloc]initWithImage:originImage];
-    CIFilter *filter = [CIFilter filterWithName:@"CIHueAdjust"
-                                  keysAndValues:kCIInputImageKey, filteredImage,
-                        @"inputAngle",[NSNumber numberWithFloat:2], nil];
-    filteredImage = filter.outputImage;
-    
-    CIContext *ciContext = [CIContext contextWithOptions:nil];
-    CGImageRef imageRef = [ciContext createCGImage:[filter outputImage]
-                                          fromRect:[[filter outputImage] extent]];
-    UIImage *outputImage = [UIImage imageWithCGImage:imageRef
-                                               scale:1.0f
-                                         orientation:UIImageOrientationUp];
-    CGImageRelease(imageRef);
-    
-    currentStampView.image = outputImage;
-    */
-    
-    
-    UIImage *originImage = [UIImage imageNamed:@"hoshi11.png"];
-    
-    
-    //星の色を変更
-    //todo
-    //currentStampView側のメソッドに
-    UIColor* monochromeColor = [UIColor yellowColor];
-    CIImage* ciImage = [[CIImage alloc]initWithImage:originImage];
-    CIColor* ciColor = [[CIColor alloc]initWithColor:monochromeColor];
-    NSNumber* nsIntensity = @1.0f;
-    CIContext* ciContext = [CIContext contextWithOptions:nil];
-    CIFilter* ciMonochromeFilter = [CIFilter filterWithName:@"CIColorMonochrome" keysAndValues:kCIInputImageKey,ciImage,@"inputColor",ciColor,@"inputIntensity",nsIntensity,nil];
-    CGImageRef cgMonochromeimage = [ciContext createCGImage:ciMonochromeFilter.outputImage fromRect:[ciMonochromeFilter.outputImage extent]];
-    currentStampView.image = [UIImage imageWithCGImage:cgMonochromeimage scale:originImage.scale orientation:UIImageOrientationUp];
-    CGImageRelease(cgMonochromeimage);
-    
+    currentStampView = [self MakeStar:point];
     
     //タッチされているビューを識別するためにタグをつける
     currentStampView.userInteractionEnabled = YES;
@@ -229,11 +163,13 @@ NSMutableArray *stars;
     
     //タッチされた座標を取得
     UITouch* touch = [touches anyObject];
-    CGPoint point = [touch locationInView:showImageView];
+    CGPoint point = [touch locationInView:self.view];
     
     //スタンプの位置を変更する
     if(_isPressStamp){
-        currentStampView.frame = CGRectMake(point.x-10, point.y-10, 20,20);
+        if(self.starSize == 0) currentStampView.frame = CGRectMake(point.x-5, point.y-5, 10,10);
+        else if (self.starSize == 1) currentStampView.frame = CGRectMake(point.x-10, point.y-10, 20,20);
+        else currentStampView.frame = CGRectMake(point.x-15, point.y-15, 30,30);
     }
 }
 
@@ -455,12 +391,82 @@ NSMutableArray *stars;
     return mat;
 }
 
+-(DragView*)MakeStar :(CGPoint)point {
+    
+    DragView* returnView;
+    
+    //サイズを指定してオブジェクトを作成
+    if(self.starSize == 0){
+        returnView = [[DragView alloc] initWithFrame:CGRectMake(point.x-5, point.y-5, 10, 10)];
+    }else if(self.starSize == 1){
+        returnView = [[DragView alloc] initWithFrame:CGRectMake(point.x-10, point.y-10, 20, 20)];
+    }else{
+        returnView = [[DragView alloc] initWithFrame:CGRectMake(point.x-15, point.y-15, 30, 30)];
+    }
+    
+    //形の変更
+    UIImage *originImage;
+    if(self.starKind == 0) originImage = [UIImage imageNamed:@"hoshi01.png"];
+    else if (self.starKind == 1 ) originImage = [UIImage imageNamed:@"hoshi12.png"];
+    else originImage = [UIImage imageNamed:@"hoshi21.png"];
+    
+    //星の色を変更
+    UIColor* monochromeColor;
+    
+    if(self.starColor == 0) monochromeColor= [UIColor yellowColor];
+    else if (self.starColor == 1) monochromeColor= [UIColor cyanColor];
+    else if (self.starColor == 2) monochromeColor= [UIColor redColor];
+    else if (self.starColor == 3) monochromeColor= [UIColor yellowColor];   //todo 緑
+    else if (self.starColor == 4) monochromeColor= [UIColor whiteColor];
+    
+    CIImage* ciImage = [[CIImage alloc]initWithImage:originImage];
+    CIColor* ciColor = [[CIColor alloc]initWithColor:monochromeColor];
+    NSNumber* nsIntensity = @1.0f;
+    CIContext* ciContext = [CIContext contextWithOptions:nil];
+    CIFilter* ciMonochromeFilter = [CIFilter filterWithName:@"CIColorMonochrome" keysAndValues:kCIInputImageKey,ciImage,@"inputColor",ciColor,@"inputIntensity",nsIntensity,nil];
+    CGImageRef cgMonochromeimage = [ciContext createCGImage:ciMonochromeFilter.outputImage fromRect:[ciMonochromeFilter.outputImage extent]];
+    returnView.image = [UIImage imageWithCGImage:cgMonochromeimage scale:originImage.scale orientation:UIImageOrientationUp];
+    CGImageRelease(cgMonochromeimage);
+    
+    return returnView;
+}
+
+
+
+
+
+
 //デリゲートメソッドを実装
 -(void)returnSelectedValue:(int)back color:(int)color figure:(int)figure size:(int)size{
     self.backColor = back;
     self.starColor = color;
     self.starKind = figure;
     self.starSize = size;
+    /*
+    // Get the subviews of the view
+    NSArray *subviews = [self.view subviews];
+    
+    // Return if there are no subviews
+    if ([subviews count] == 0) return;
+    
+    for (DragView *subview in subviews) {
+        if(subview.tag == 0){
+            [subview removeFromSuperview];
+        }
+    }
+    
+    UIImageView *backView;
+    if(back ==0) backView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back1.png"]];
+    else if(back == 1) backView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back2.png"]];
+    else if(back == 2) backView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back3.png"]];
+    else if(back == 3) backView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back4.png"]];
+    else backView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back5.png"]];
+
+    backView.contentMode = UIViewContentModeScaleAspectFit;
+    backView.tag = 0;
+    [self.view addSubview:backView];
+    [self.view sendSubviewToBack:backView];
+     */
 }
 
 @end
