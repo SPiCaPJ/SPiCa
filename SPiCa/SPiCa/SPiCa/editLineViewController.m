@@ -357,9 +357,10 @@ UIImage *picture;
 // finishボタンが押された時の処理
 - (void)finish
 {
-    homeViewController *home = [self.storyboard instantiateViewControllerWithIdentifier:@"menu"];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+  /*  homeViewController *home = [self.storyboard instantiateViewControllerWithIdentifier:@"menu"];
     [self presentViewController:home animated:YES completion:nil];
-    return;
+    return;*/
 }
 
 // saveボタンが押された時の処理
