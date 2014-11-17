@@ -15,15 +15,16 @@
 
 @implementation PaletteViewController
 
+@synthesize delegate;
 //@synthesize SC;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   // if([self.a isEqualToString:( @"test")]){
-    //    SC.selectedSegmentIndex = 3;
-   // }
-    
+    self.BackColor.selectedSegmentIndex = self.int_Back_color;
+    self.StarColor.selectedSegmentIndex = self.int_Star_color;
+    self.Star.selectedSegmentIndex = self.int_Star_obj;
+    self.StarSize.selectedSegmentIndex = self.int_Star_size;
     // Do any additional setup after loading the view.
 }
 
@@ -106,6 +107,14 @@
 
 -(IBAction)button_back{
     [self dismissViewControllerAnimated:YES completion:nil];
+    // デリゲート先がちゃんと「sampleMethod1」というメソッドを持っているか?
+    if ([self.delegate respondsToSelector:@selector(returnSelectedValue:color:figure:size:)]) {
+        // sampleMethod1を呼び出す
+        [self.delegate returnSelectedValue:self.BackColor.selectedSegmentIndex color:self.StarColor.selectedSegmentIndex figure:self.Star.selectedSegmentIndex size:self.StarSize.selectedSegmentIndex];
+    }
+
+    
+    
 }
 
 

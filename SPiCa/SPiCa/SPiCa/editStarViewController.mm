@@ -39,9 +39,14 @@ NSMutableArray *stars;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    //初期化
     stars = [NSMutableArray array];
-
     tagNo = 1;
+    self.backColor = 0;
+    self.starColor = 0;
+    self.starKind = 0;
+    self.starSize = 0;
+    
     
     //戻るボタンの文字を変更
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] init];
@@ -56,6 +61,8 @@ NSMutableArray *stars;
     CGFloat navBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
     CGFloat availableHeight = screenHeight - statusBarHeight - navBarHeight;
     CGFloat availableWidth = screenWidth;
+    
+    //todoフッター部も設ける
     
     showImageView = [[UIImageView alloc] init];
     
@@ -258,9 +265,11 @@ NSMutableArray *stars;
     }
     else if ([[segue identifier] isEqualToString:@"aaaaa"] ){
         PaletteViewController *paletteViewController = [segue destinationViewController];
-        
-        paletteViewController.a = @"test";
-        //paletteViewController.color = 1 ;
+        paletteViewController.delegate = self;
+        paletteViewController.int_Back_color = self.backColor;
+        paletteViewController.int_Star_color = self.starColor;
+        paletteViewController.int_Star_obj = self.starKind;
+        paletteViewController.int_Star_size = self.starSize;
     }
 }
 
@@ -446,6 +455,13 @@ NSMutableArray *stars;
     return mat;
 }
 
-
+//デリゲートメソッドを実装
+-(void)returnSelectedValue:(int)back color:(int)color figure:(int)figure size:(int)size{
+    self.backColor = back;
+    self.starColor = color;
+    self.starKind = figure;
+    self.starSize = size;
+}
 
 @end
+

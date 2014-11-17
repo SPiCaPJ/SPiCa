@@ -7,11 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import"PaletteViewController.h"
 
-@interface editStarViewController : UIViewController
-
-
+@interface editStarViewController : UIViewController<PaletteDelegate>
 
 @property UIImage *picture;
+
+@property int backColor;
+
+@property int starColor;
+
+@property int starKind;
+
+@property int starSize;
+
 
 @end
