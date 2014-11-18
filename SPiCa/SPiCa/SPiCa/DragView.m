@@ -12,7 +12,9 @@
 
 - (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
-	startLocation = [[touches anyObject] locationInView:self];
+    
+    startLocation = [[touches anyObject] locationInView:self];
+    self.center = CGPointMake(self.frame.origin.x + self.frame.size.width/2,self.frame.origin.y -self.frame.size.height/2);
 	[[self superview] bringSubviewToFront:self];
 }
 
@@ -23,7 +25,7 @@
 	CGRect frame = [self frame];
 	frame.origin.x += pt.x - startLocation.x;
 	frame.origin.y += pt.y - startLocation.y;
-
+    self.center = CGPointMake(self.frame.origin.x + self.frame.size.width/2,self.frame.origin.y -self.frame.size.height/2);
     [self setFrame:frame];
     
     

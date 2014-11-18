@@ -22,6 +22,8 @@ UIImageView *showImageView;
 UIAlertView *firstAlert;
 UIAlertView *secondAlert;
 UIImage *picture;
+CGFloat statusBarHeight;
+CGFloat navBarHeight;
 
 - (void)viewDidLoad
 {
@@ -33,8 +35,8 @@ UIImage *picture;
     CGRect screen = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = CGRectGetWidth(screen);
     CGFloat screenHeight = CGRectGetHeight(screen);
-    CGFloat statusBarHeight = 30;
-    CGFloat navBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    statusBarHeight = 30;
+    navBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
     CGFloat availableHeight = screenHeight - statusBarHeight - navBarHeight;
     CGFloat availableWidth = screenWidth;
     
@@ -76,10 +78,14 @@ UIImage *picture;
     // Dispose of any resources that can be recreated.
 }
 
+
+
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {// シングルタッチの場合
     UITouch *touch = [touches anyObject];
-    CGPoint location = [touch locationInView:showImageView];
+    CGPoint location = [touch locationInView:self.view];
+    
     
     NSLog(@"location.x:%f location.y:%f", location.x, location.y);
     
@@ -96,7 +102,7 @@ UIImage *picture;
     //for (NSValue *Starvalue in self.stars) {
     for(DragView *StarView in self.stars){
         //Starpoints[starCount1++] = StarView.frame.origin;
-        Starpoints[starCount1] = StarView.frame.origin;
+        Starpoints[starCount1] = StarView.center;
         //StarWidth[starCount1] = StarView.frame.size.width/2;
         //StarHeight[starCount1] = StarView.frame.size.height/2;
         starCount1++;
@@ -107,12 +113,12 @@ UIImage *picture;
     for(starCount2 = 0; starCount2<starCount1;starCount2++){
         //CGRect rc = CGRectMake(Starpoints[starCount2].x,Starpoints[starCount2].y,100,100);
         
-        float rx = location.x - Starpoints[starCount2].x-10;
-        float ry = location.y - Starpoints[starCount2].y+34;
+        //float rx = location.x - Starpoints[starCount2].x-10;
+        //float ry = location.y - Starpoints[starCount2].y+34;
         
         //星の中心をとれるかと思ったが下にずれてしまっている
-        //float rx = location.x - Starpoints[starCount2].x-StarWidth[starCount2];
-        //float ry = location.y - Starpoints[starCount2].y+StarHeight[starCount2];
+        float rx = location.x - Starpoints[starCount2].x;
+        float ry = location.y - Starpoints[starCount2].y;
         
         //距離rを求める
         float r = sqrt(rx*rx + ry*ry);
@@ -123,16 +129,13 @@ UIImage *picture;
             touchflag = true;
             
             //星の中心をとれるかと思ったが下にずれてしまっている
-            //location.x = Starpoints[starCount2].x+StarWidth[starCount2];
-            //location.y = Starpoints[starCount2].y+StarHeight[starCount2];
+            location.x = Starpoints[starCount2].x;
+            location.y = Starpoints[starCount2].y;
             
-            location.x = Starpoints[starCount2].x+10;
-            location.y = Starpoints[starCount2].y-34;
+           // location.x = Starpoints[starCount2].x+10;
+           // location.y = Starpoints[starCount2].y-34;
             
         }
-        
-        
-        
     }
     
     //星以外をタッチしたらフラグそのままでスルーするようにする処理を書くこと（フラグでも使う）
@@ -140,8 +143,6 @@ UIImage *picture;
         NSLog(@"this Not touch!? Stars!?");
         return;
     }
-    
-    
     
     
     // NSMutableArray *toucharray = [NSMutableArray array];
@@ -277,8 +278,8 @@ UIImage *picture;
         //for(int i = 0 ; i < j-1;i++){
         for(int i = 0 ; i < j-1 ; i = i + 2){
             // 始点と終点を設定
-            CGContextMoveToPoint(context,points[i].x,points[i].y);
-            CGContextAddLineToPoint(context,points[i+1].x, points[i+1].y);
+            CGContextMoveToPoint(context,points[i].x,points[i].y - statusBarHeight - navBarHeight);
+            CGContextAddLineToPoint(context,points[i+1].x, points[i+1].y - statusBarHeight - navBarHeight);
             // 実際に線を描画
             CGContextStrokePath(context);
             

@@ -10,10 +10,9 @@
 
 @interface DragView : UIImageView {
 	CGPoint startLocation;
-    
-    
 }
 
+@property CGPoint center;
 -(void)changeFigure:(NSInteger)figure ;
 
 @end

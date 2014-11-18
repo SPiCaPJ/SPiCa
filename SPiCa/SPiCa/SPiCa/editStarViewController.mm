@@ -74,7 +74,7 @@ NSMutableArray *stars;
     UIImageView *backView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back1.png"]];
     
     backView.contentMode = UIViewContentModeScaleAspectFit;
-    backView.tag = 0;
+    backView.tag = -1;
     [self.view addSubview:backView];
     [self.view sendSubviewToBack:backView];
     
@@ -135,7 +135,7 @@ NSMutableArray *stars;
     CGPoint point = [touch locationInView:self.view];
     
     currentStampView = [self MakeStar:point];
-    
+    currentStampView.center = point;
     //タッチされているビューを識別するためにタグをつける
     currentStampView.userInteractionEnabled = YES;
     currentStampView.tag = tagNo;
@@ -165,11 +165,22 @@ NSMutableArray *stars;
     UITouch* touch = [touches anyObject];
     CGPoint point = [touch locationInView:self.view];
     
+    currentStampView.center = point;
+    
     //スタンプの位置を変更する
     if(_isPressStamp){
-        if(self.starSize == 0) currentStampView.frame = CGRectMake(point.x-5, point.y-5, 10,10);
-        else if (self.starSize == 1) currentStampView.frame = CGRectMake(point.x-10, point.y-10, 20,20);
-        else currentStampView.frame = CGRectMake(point.x-15, point.y-15, 30,30);
+        if(self.starSize == 0)
+        {
+            currentStampView.frame = CGRectMake(point.x-5, point.y-5, 10,10);
+        }
+        else if (self.starSize == 1)
+        {
+            currentStampView.frame = CGRectMake(point.x-10, point.y-10, 20,20);
+        }
+        else
+        {
+            currentStampView.frame = CGRectMake(point.x-15, point.y-15, 30,30);
+        }
     }
 }
 
@@ -346,35 +357,6 @@ NSMutableArray *stars;
     return ret;
 }
 
-//合成するメソッド
-- (UIImage *)compositeImages:(NSArray *)array size:(CGSize)size
-{
-    UIImage *image = nil;
-    
-    // ビットマップ形式のグラフィックスコンテキストの生成
-    UIGraphicsBeginImageContextWithOptions(size, 0.f, 0);
-    
-    // 塗りつぶす領域を決める
-    CGRect rect = CGRectMake(0, 0, size.width, size.height);
-    
-    for (id item in array) {
-        if (![item isKindOfClass:[UIImage class]]) {
-            continue;
-        }
-        UIImage *img = item;
-        [img drawInRect:rect];
-    }
-    
-    // 現在のグラフィックスコンテキストの画像を取得する
-    image = UIGraphicsGetImageFromCurrentImageContext();
-    
-    // 現在のグラフィックスコンテキストへの編集を終了
-    // (スタックの先頭から削除する)
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
-
 //uiimageをmatに変換するメソッド
 - (cv::Mat)matWithImage:(UIImage*)image
 {
@@ -391,6 +373,7 @@ NSMutableArray *stars;
     return mat;
 }
 
+//星のオブジェクトを作成するメソッド
 -(DragView*)MakeStar :(CGPoint)point {
     
     DragView* returnView;
@@ -442,7 +425,7 @@ NSMutableArray *stars;
     self.starColor = color;
     self.starKind = figure;
     self.starSize = size;
-    /*
+    
     // Get the subviews of the view
     NSArray *subviews = [self.view subviews];
     
@@ -450,7 +433,7 @@ NSMutableArray *stars;
     if ([subviews count] == 0) return;
     
     for (DragView *subview in subviews) {
-        if(subview.tag == 0){
+        if(subview.tag == -1){
             [subview removeFromSuperview];
         }
     }
@@ -463,10 +446,10 @@ NSMutableArray *stars;
     else backView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back5.png"]];
 
     backView.contentMode = UIViewContentModeScaleAspectFit;
-    backView.tag = 0;
+    backView.tag = -1;
     [self.view addSubview:backView];
     [self.view sendSubviewToBack:backView];
-     */
+     
 }
 
 @end
