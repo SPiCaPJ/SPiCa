@@ -35,9 +35,10 @@ CGFloat navBarHeight;
     CGRect screen = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = CGRectGetWidth(screen);
     CGFloat screenHeight = CGRectGetHeight(screen);
-    statusBarHeight = 30;
-    navBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    navBarHeight = self.navigationController.navigationBar.bounds.size.height;
     CGFloat availableHeight = screenHeight - statusBarHeight - navBarHeight;
+
     CGFloat availableWidth = screenWidth;
     
     //ここで渡された画像を表示
@@ -47,13 +48,8 @@ CGFloat navBarHeight;
     
     showImageView.frame = CGRectMake(0, statusBarHeight + navBarHeight, availableWidth, availableHeight);
     
-    showImageView.contentMode = UIViewContentModeScaleAspectFit;
+    //showImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:showImageView];
-    
-    for (DragView *subview in self.stars) {
-        NSLog(@"%f",subview.frame.origin.x);
-        
-    }
     
     //ここから線を引くための下処理
     //初期フラグ

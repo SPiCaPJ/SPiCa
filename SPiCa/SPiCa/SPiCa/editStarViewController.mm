@@ -57,8 +57,8 @@ NSMutableArray *stars;
     CGRect  screen = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = CGRectGetWidth(screen);
     CGFloat screenHeight = CGRectGetHeight(screen);
-    CGFloat statusBarHeight = 20;
-    CGFloat navBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    CGFloat navBarHeight = self.navigationController.navigationBar.bounds.size.height;
     CGFloat availableHeight = screenHeight - statusBarHeight - navBarHeight;
     CGFloat availableWidth = screenWidth;
     
