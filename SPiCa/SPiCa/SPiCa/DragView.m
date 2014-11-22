@@ -14,8 +14,9 @@
 {
     
     startLocation = [[touches anyObject] locationInView:self];
-    self.center = CGPointMake(self.frame.origin.x + self.frame.size.width/2,self.frame.origin.y -self.frame.size.height/2);
-	[[self superview] bringSubviewToFront:self];
+  	[[self superview] bringSubviewToFront:self];
+    //self.center = CGPointMake(self.frame.origin.x + self.frame.size.width/2,self.frame.origin.y -self.frame.size.height/2);
+
 }
 
 //移動されるとき
