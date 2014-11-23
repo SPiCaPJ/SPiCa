@@ -49,52 +49,102 @@
  */
 
 //Segmented Controlをタッチしたときの動作
-/*
--(IBAction)SegChanged:(id)sender
-{
-    switch (SC.selectedSegmentIndex) {
+
+-(IBAction)BackColorSegChanged:(id)sender{
+    switch (self.BackColor.selectedSegmentIndex) {
         case 0:
-            NSLog(self.a);
-            self.view.backgroundColor = [UIColor blackColor];
+            self.BackColor.tintColor = [UIColor purpleColor];
             break;
             
         case 1:
-            NSLog(@"2つ目が選択されています");
-            self.view.backgroundColor = [UIColor blueColor];
+            self.BackColor.tintColor = [UIColor blueColor];
             break;
             
         case 2:
-            NSLog(@"3つ目が選択されています");
-            self.view.backgroundColor = [UIColor redColor];
+            
+            self.BackColor.tintColor = [UIColor redColor];
             break;
             
         case 3:
-            NSLog(@"4つ目が選択されています");
-            self.view.backgroundColor = [UIColor greenColor];
+        
+            self.BackColor.tintColor = [UIColor greenColor];
             break;
             
         case 4:
-            NSLog(@"5つ目が選択されています");
-            self.view.backgroundColor = [UIColor grayColor];
+           
+            self.BackColor.tintColor = [UIColor blackColor];
             break;
             
         default:
             break;
     }
-    
-}
- */
--(IBAction)BackColorSegChanged:(id)sender{
-    
 }
 -(IBAction)StarColorSegChanged:(id)sender{
-    
+    switch (self.StarColor.selectedSegmentIndex) {
+        case 0:
+            self.StarColor.tintColor = [UIColor yellowColor];
+            break;
+            
+        case 1:
+            self.StarColor.tintColor = [UIColor blueColor];
+            break;
+            
+        case 2:
+            
+            self.StarColor.tintColor = [UIColor redColor];
+            break;
+            
+        case 3:
+            
+            self.StarColor.tintColor = [UIColor greenColor];
+            break;
+            
+        case 4:
+            
+            self.StarColor.tintColor = [UIColor whiteColor];
+            break;
+            
+        default:
+            break;
+    }
 }
 -(IBAction)StarSegChanged:(id)sender{
-    
+    switch (self.Star.selectedSegmentIndex) {
+        case 0:
+            self.Star.tintColor = [UIColor whiteColor];
+            break;
+            
+        case 1:
+            self.Star.tintColor = [UIColor grayColor];
+            break;
+            
+        case 2:
+            
+            self.Star.tintColor = [UIColor blackColor];
+            break;
+            
+        default:
+            break;
+    }
 }
 -(IBAction)StarSizeSegChanged:(id)sender{
-    
+    switch (self.StarSize.selectedSegmentIndex) {
+        case 0:
+            self.StarSize.tintColor = [UIColor whiteColor];
+            break;
+            
+        case 1:
+            self.StarSize.tintColor = [UIColor grayColor];
+            break;
+            
+        case 2:
+            
+            self.StarSize.tintColor = [UIColor blackColor];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 

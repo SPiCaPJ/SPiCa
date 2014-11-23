@@ -120,7 +120,7 @@ CGFloat navBarHeight;
         float r = sqrt(rx*rx + ry*ry);
         NSLog(@"距離：%f", r);
         
-        if(r <= 10) {
+        if(r <= 30) {
             NSLog(@"this touch! Stars!");
             touchflag = true;
             
