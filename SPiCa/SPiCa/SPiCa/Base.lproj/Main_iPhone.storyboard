@@ -82,25 +82,12 @@
                         <viewControllerLayoutGuide type="top" id="VGq-l2-soP"/>
                         <viewControllerLayoutGuide type="bottom" id="8ht-CH-bxa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="del-lU-z2n">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="del-lU-z2n">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tek-M2-5eq">
-                                <rect key="frame" x="20" y="79" width="280" height="29"/>
-                                <segments>
-                                    <segment title="紫"/>
-                                    <segment title="青"/>
-                                    <segment title="赤"/>
-                                    <segment title="緑"/>
-                                    <segment title="黒"/>
-                                </segments>
-                                <connections>
-                                    <action selector="BackColorSegChanged:" destination="UJG-ka-z8M" eventType="valueChanged" id="6dx-q4-RY3"/>
-                                </connections>
-                            </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="G4R-ml-8c1">
-                                <rect key="frame" x="20" y="169" width="280" height="29"/>
+                                <rect key="frame" x="20" y="211" width="280" height="29"/>
                                 <segments>
                                     <segment title="黄"/>
                                     <segment title="青"/>
@@ -113,7 +100,7 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H3e-xS-dyB">
-                                <rect key="frame" x="16" y="260" width="280" height="29"/>
+                                <rect key="frame" x="16" y="302" width="280" height="29"/>
                                 <segments>
                                     <segment title="●"/>
                                     <segment title="＋"/>
@@ -123,22 +110,16 @@
                                     <action selector="StarSegChanged:" destination="UJG-ka-z8M" eventType="valueChanged" id="3Yl-UC-eJ8"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="背景色選択" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8g-YY-yRA">
-                                <rect key="frame" x="20" y="50" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="星の色" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sR-ZZ-vus">
+                                <rect key="frame" x="20" y="182" width="114" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="星色選択" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sR-ZZ-vus">
-                                <rect key="frame" x="20" y="140" width="68" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="星の形選択" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-FG-oxl">
-                                <rect key="frame" x="20" y="231" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="星の形" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-FG-oxl">
+                                <rect key="frame" x="20" y="273" width="109" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFR-mU-7NP">
@@ -151,7 +132,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AvU-o7-vQE">
-                                <rect key="frame" x="16" y="353" width="284" height="29"/>
+                                <rect key="frame" x="16" y="395" width="284" height="29"/>
                                 <segments>
                                     <segment title="小"/>
                                     <segment title="中"/>
@@ -161,14 +142,36 @@
                                     <action selector="StarSizeSegChanged:" destination="UJG-ka-z8M" eventType="valueChanged" id="raj-iX-5sq"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="星の大きさ選択" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxg-ik-tgS">
-                                <rect key="frame" x="20" y="324" width="119" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="星のサイズ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxg-ik-tgS">
+                                <rect key="frame" x="20" y="366" width="160" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tek-M2-5eq">
+                                <rect key="frame" x="20" y="83" width="280" height="29"/>
+                                <segments>
+                                    <segment title="紫"/>
+                                    <segment title="青"/>
+                                    <segment title="赤"/>
+                                    <segment title="緑"/>
+                                    <segment title="黒"/>
+                                </segments>
+                                <connections>
+                                    <action selector="BackColorSegChanged:" destination="UJG-ka-z8M" eventType="valueChanged" id="6dx-q4-RY3"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8g-YY-yRA">
+                                <rect key="frame" x="20" y="54" width="134" height="22"/>
+                                <string key="text" base64-UTF8="YES">
+CAjog4zmma/oibI
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="BackColor" destination="tek-M2-5eq" id="Kw9-k2-Qpx"/>

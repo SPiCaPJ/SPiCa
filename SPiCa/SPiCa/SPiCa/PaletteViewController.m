@@ -26,8 +26,21 @@
     self.Star.selectedSegmentIndex = self.int_Star_obj;
     self.StarSize.selectedSegmentIndex = self.int_Star_size;
     // Do any additional setup after loading the view.
+    
+    [self BackColorSegChanged:nil];
+    [self StarColorSegChanged:nil];
+    [self StarSegChanged:nil];
+    [self StarSizeSegChanged:nil];
+    
+    //self.BackColor.frame =  CGRectMake(0, 0, 250, 50);
+    //[self.BackColor setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, fNewHeight)];
+    
 }
 
+- (UIModalPresentationStyle)modalPresentationStyle
+{
+    return UIModalPresentationOverCurrentContext;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,12 +54,6 @@
     
 }
 
-/*
- -(void)dealloc {
- [sc release];
- [super dealloc];
- }
- */
 
 //Segmented Controlをタッチしたときの動作
 
@@ -72,7 +79,7 @@
             
         case 4:
            
-            self.BackColor.tintColor = [UIColor blackColor];
+            self.BackColor.tintColor = [UIColor grayColor];
             break;
             
         default:
@@ -115,12 +122,12 @@
             break;
             
         case 1:
-            self.Star.tintColor = [UIColor grayColor];
+            self.Star.tintColor = [UIColor lightGrayColor];
             break;
             
         case 2:
             
-            self.Star.tintColor = [UIColor blackColor];
+            self.Star.tintColor = [UIColor darkGrayColor];
             break;
             
         default:
@@ -134,12 +141,12 @@
             break;
             
         case 1:
-            self.StarSize.tintColor = [UIColor grayColor];
+            self.StarSize.tintColor = [UIColor lightGrayColor];
             break;
             
         case 2:
             
-            self.StarSize.tintColor = [UIColor blackColor];
+            self.StarSize.tintColor = [UIColor darkGrayColor];
             break;
             
         default:
@@ -167,15 +174,5 @@
     
 }
 
-
-/*
- #pragma mark - Navigation
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end
