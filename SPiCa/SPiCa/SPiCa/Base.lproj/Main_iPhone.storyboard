@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cMf-17-76D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cMf-17-76D">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -122,21 +122,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFR-mU-7NP">
-                                <rect key="frame" x="16" y="499" width="45" height="30"/>
-                                <state key="normal" title="閉じる">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="button_back" destination="UJG-ka-z8M" eventType="touchUpInside" id="0h0-s5-gYt"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AvU-o7-vQE">
                                 <rect key="frame" x="16" y="395" width="284" height="29"/>
                                 <segments>
-                                    <segment title="小"/>
-                                    <segment title="中"/>
-                                    <segment title="大"/>
+                                    <segment title="small"/>
+                                    <segment title="middle"/>
+                                    <segment title="large"/>
                                 </segments>
                                 <connections>
                                     <action selector="StarSizeSegChanged:" destination="UJG-ka-z8M" eventType="valueChanged" id="raj-iX-5sq"/>
@@ -151,11 +142,11 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tek-M2-5eq">
                                 <rect key="frame" x="20" y="83" width="280" height="29"/>
                                 <segments>
-                                    <segment title="紫"/>
-                                    <segment title="青"/>
-                                    <segment title="赤"/>
-                                    <segment title="緑"/>
-                                    <segment title="黒"/>
+                                    <segment title="purple"/>
+                                    <segment title="blue"/>
+                                    <segment title=" red "/>
+                                    <segment title="green"/>
+                                    <segment title="black"/>
                                 </segments>
                                 <connections>
                                     <action selector="BackColorSegChanged:" destination="UJG-ka-z8M" eventType="valueChanged" id="6dx-q4-RY3"/>
@@ -170,8 +161,17 @@ CAjog4zmma/oibI
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFR-mU-7NP">
+                                <rect key="frame" x="134" y="513" width="45" height="30"/>
+                                <state key="normal" title="閉じる">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button_back" destination="UJG-ka-z8M" eventType="touchUpInside" id="0h0-s5-gYt"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="BackColor" destination="tek-M2-5eq" id="Kw9-k2-Qpx"/>
@@ -195,20 +195,21 @@ CAjog4zmma/oibI
                     <view key="view" contentMode="scaleToFill" id="uOd-cb-Bw6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiG-CO-ZRE">
-                                <rect key="frame" x="20" y="518" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="UJG-ka-z8M" kind="modal" identifier="aaaaa" id="F8Q-7F-o2l"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="gd6-MF-Cuy">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hiG-CO-ZRE">
+                            <rect key="frame" x="121" y="-28" width="78" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="        設定">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <segue destination="UJG-ka-z8M" kind="modal" identifier="aaaaa" id="F8Q-7F-o2l"/>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" title="決定" id="KXP-ZR-RzO">
                             <connections>
                                 <segue destination="CaR-o7-FbN" kind="push" identifier="toEditLine" id="iry-to-Slt"/>
@@ -218,7 +219,7 @@ CAjog4zmma/oibI
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLi-4j-QYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742" y="-248"/>
+            <point key="canvasLocation" x="756" y="-335"/>
         </scene>
         <!--Edit Line View Controller-->
         <scene sceneID="0rW-IW-skJ">

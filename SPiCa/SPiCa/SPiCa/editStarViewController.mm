@@ -45,7 +45,7 @@ NSMutableArray *stars;
     self.backColor = 0;
     self.starColor = 0;
     self.starKind = 0;
-    self.starSize = 0;
+    self.starSize = 1;
     
     
     //戻るボタンの文字を変更

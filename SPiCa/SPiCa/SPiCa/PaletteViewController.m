@@ -93,7 +93,7 @@
             break;
             
         case 1:
-            self.StarColor.tintColor = [UIColor blueColor];
+            self.StarColor.tintColor = [UIColor cyanColor];
             break;
             
         case 2:
