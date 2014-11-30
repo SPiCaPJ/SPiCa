@@ -53,6 +53,16 @@ NSMutableArray *stars;
     backButton.title = @"戻る";
     self.navigationItem.backBarButtonItem = backButton;
     
+    /*
+    UIBarButtonItem* right1 = [[UIBarButtonItem alloc]
+                               initWithTitle:@"右1"
+                               style:UIBarButtonItemStyleBordered
+                               target:self
+                               action:nil];
+
+    self.navigationItem.rightBarButtonItems = @[right1];
+    */
+    
     //ナビゲーションツールバーを除いた大きさの取得
     CGRect  screen = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = CGRectGetWidth(screen);

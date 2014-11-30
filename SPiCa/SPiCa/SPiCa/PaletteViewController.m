@@ -29,11 +29,22 @@
     
     [self BackColorSegChanged:nil];
     [self StarColorSegChanged:nil];
-    [self StarSegChanged:nil];
-    [self StarSizeSegChanged:nil];
+
     
     //self.BackColor.frame =  CGRectMake(0, 0, 250, 50);
     //[self.BackColor setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, fNewHeight)];
+    
+
+    // セグメンテッドコントロールの選択されていないタイトルの色を変更する
+    NSDictionary *attributes = @{
+                                 NSForegroundColorAttributeName : [UIColor whiteColor]
+                                 };
+    [self.StarColor setTitleTextAttributes:attributes
+                                  forState:UIControlStateNormal];
+    [self.BackColor setTitleTextAttributes:attributes
+                                  forState:UIControlStateNormal];
+    
+    
     
 }
 
@@ -115,7 +126,9 @@
             break;
     }
 }
+
 -(IBAction)StarSegChanged:(id)sender{
+    /*
     switch (self.Star.selectedSegmentIndex) {
         case 0:
             self.Star.tintColor = [UIColor whiteColor];
@@ -133,8 +146,10 @@
         default:
             break;
     }
+     */
 }
 -(IBAction)StarSizeSegChanged:(id)sender{
+    /*
     switch (self.StarSize.selectedSegmentIndex) {
         case 0:
             self.StarSize.tintColor = [UIColor whiteColor];
@@ -152,6 +167,7 @@
         default:
             break;
     }
+     */
 }
 
 

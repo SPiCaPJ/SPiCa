@@ -31,6 +31,9 @@
 		3B874C4A19EA0DE200EDDE68 /* button2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B874C4919EA0DE200EDDE68 /* button2.png */; };
 		3B874C4C19EA9F8C00EDDE68 /* button3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B874C4B19EA9F8C00EDDE68 /* button3.png */; };
 		3B874C4E19EA9F9300EDDE68 /* button4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B874C4D19EA9F9300EDDE68 /* button4.png */; };
+		3BF65AAF1A2B25C100D539AF /* hoshi01-25p.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF65AAE1A2B25C100D539AF /* hoshi01-25p.png */; };
+		3BF65AB11A2B262300D539AF /* hoshi12-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF65AB01A2B262300D539AF /* hoshi12-25.png */; };
+		3BF65AB31A2B262B00D539AF /* hoshi21-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF65AB21A2B262B00D539AF /* hoshi21-25.png */; };
 		87188F6219B9C8300073D35C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87188F6119B9C8300073D35C /* Foundation.framework */; };
 		87188F6419B9C8300073D35C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87188F6319B9C8300073D35C /* CoreGraphics.framework */; };
 		87188F6619B9C8300073D35C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87188F6519B9C8300073D35C /* UIKit.framework */; };
@@ -87,6 +90,9 @@
 		3B874C4919EA0DE200EDDE68 /* button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button2.png; sourceTree = "<group>"; };
 		3B874C4B19EA9F8C00EDDE68 /* button3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button3.png; sourceTree = "<group>"; };
 		3B874C4D19EA9F9300EDDE68 /* button4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button4.png; sourceTree = "<group>"; };
+		3BF65AAE1A2B25C100D539AF /* hoshi01-25p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hoshi01-25p.png"; sourceTree = "<group>"; };
+		3BF65AB01A2B262300D539AF /* hoshi12-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hoshi12-25.png"; sourceTree = "<group>"; };
+		3BF65AB21A2B262B00D539AF /* hoshi21-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hoshi21-25.png"; sourceTree = "<group>"; };
 		87188F5E19B9C8300073D35C /* SPiCa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPiCa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87188F6119B9C8300073D35C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		87188F6319B9C8300073D35C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -151,7 +157,10 @@
 			children = (
 				205206B319D702F100D2DEE9 /* hoshi01.png */,
 				205206B419D702F100D2DEE9 /* hoshi11.png */,
+				3BF65AAE1A2B25C100D539AF /* hoshi01-25p.png */,
 				205206B519D702F100D2DEE9 /* hoshi12.png */,
+				3BF65AB01A2B262300D539AF /* hoshi12-25.png */,
+				3BF65AB21A2B262B00D539AF /* hoshi21-25.png */,
 				205206B619D702F100D2DEE9 /* hoshi13.png */,
 				205206B719D702F100D2DEE9 /* hoshi21.png */,
 				205206B819D702F100D2DEE9 /* hoshi22.png */,
@@ -348,6 +357,7 @@
 				87188F7D19B9C8300073D35C /* Images.xcassets in Resources */,
 				87188F7519B9C8300073D35C /* Main_iPhone.storyboard in Resources */,
 				3B874C4C19EA9F8C00EDDE68 /* button3.png in Resources */,
+				3BF65AB31A2B262B00D539AF /* hoshi21-25.png in Resources */,
 				3B3E97A819EACAD400DA92E8 /* line.png in Resources */,
 				87188F6C19B9C8300073D35C /* InfoPlist.strings in Resources */,
 				205206C019D702F100D2DEE9 /* hoshi01.png in Resources */,
@@ -355,8 +365,10 @@
 				3B874C4619EA015000EDDE68 /* spcback3.jpg in Resources */,
 				205206C219D702F100D2DEE9 /* hoshi12.png in Resources */,
 				205206C119D702F100D2DEE9 /* hoshi11.png in Resources */,
+				3BF65AAF1A2B25C100D539AF /* hoshi01-25p.png in Resources */,
 				205206C519D702F100D2DEE9 /* hoshi22.png in Resources */,
 				3B874C4819EA0DD800EDDE68 /* button1.png in Resources */,
+				3BF65AB11A2B262300D539AF /* hoshi12-25.png in Resources */,
 				205206C619D702F100D2DEE9 /* hoshi23.png in Resources */,
 				205206C319D702F100D2DEE9 /* hoshi13.png in Resources */,
 				205206C419D702F100D2DEE9 /* hoshi21.png in Resources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cMf-17-76D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cMf-17-76D">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -89,12 +89,13 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="G4R-ml-8c1">
                                 <rect key="frame" x="20" y="211" width="280" height="29"/>
                                 <segments>
-                                    <segment title="黄"/>
-                                    <segment title="青"/>
-                                    <segment title="赤"/>
-                                    <segment title="緑"/>
-                                    <segment title="白"/>
+                                    <segment title="yellow"/>
+                                    <segment title="cyan"/>
+                                    <segment title="red"/>
+                                    <segment title="green"/>
+                                    <segment title="white"/>
                                 </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="StarColorSegChanged:" destination="UJG-ka-z8M" eventType="valueChanged" id="Htl-9T-Jzj"/>
                                 </connections>
@@ -102,10 +103,11 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H3e-xS-dyB">
                                 <rect key="frame" x="16" y="302" width="280" height="29"/>
                                 <segments>
-                                    <segment title="●"/>
-                                    <segment title="＋"/>
-                                    <segment title="＊"/>
+                                    <segment title="" image="hoshi01-25p.png"/>
+                                    <segment title="" image="hoshi12-25.png"/>
+                                    <segment title="" image="hoshi21-25.png"/>
                                 </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="StarSegChanged:" destination="UJG-ka-z8M" eventType="valueChanged" id="3Yl-UC-eJ8"/>
                                 </connections>
@@ -129,6 +131,7 @@
                                     <segment title="middle"/>
                                     <segment title="large"/>
                                 </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="StarSizeSegChanged:" destination="UJG-ka-z8M" eventType="valueChanged" id="raj-iX-5sq"/>
                                 </connections>
@@ -139,15 +142,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tek-M2-5eq">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tek-M2-5eq">
                                 <rect key="frame" x="20" y="83" width="280" height="29"/>
                                 <segments>
                                     <segment title="purple"/>
                                     <segment title="blue"/>
-                                    <segment title=" red "/>
+                                    <segment title="red"/>
                                     <segment title="green"/>
                                     <segment title="black"/>
                                 </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="BackColorSegChanged:" destination="UJG-ka-z8M" eventType="valueChanged" id="6dx-q4-RY3"/>
                                 </connections>
@@ -155,7 +159,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8g-YY-yRA">
                                 <rect key="frame" x="20" y="54" width="134" height="22"/>
                                 <string key="text" base64-UTF8="YES">
-CAjog4zmma/oibI
+CAjog4zmma/jga7oibI
 </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -202,7 +206,7 @@ CAjog4zmma/oibI
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hiG-CO-ZRE">
                             <rect key="frame" x="121" y="-28" width="78" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="        設定">
+                            <state key="normal" title="設定">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -274,6 +278,9 @@ CAjog4zmma/oibI
     <resources>
         <image name="button3.png" width="640" height="80"/>
         <image name="button4.png" width="640" height="80"/>
+        <image name="hoshi01-25p.png" width="25" height="25"/>
+        <image name="hoshi12-25.png" width="25" height="25"/>
+        <image name="hoshi21-25.png" width="25" height="25"/>
         <image name="line.png" width="200" height="20"/>
         <image name="spcback3.jpg" width="1200" height="1200"/>
     </resources>
