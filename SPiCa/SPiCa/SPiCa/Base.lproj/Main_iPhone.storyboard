@@ -166,8 +166,11 @@ CAjog4zmma/jga7oibI
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFR-mU-7NP">
-                                <rect key="frame" x="134" y="513" width="45" height="30"/>
-                                <state key="normal" title="閉じる">
+                                <rect key="frame" x="93" y="498" width="135" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="決定">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -204,11 +207,12 @@ CAjog4zmma/jga7oibI
                     <navigationItem key="navigationItem" id="gd6-MF-Cuy">
                         <nil key="title"/>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hiG-CO-ZRE">
-                            <rect key="frame" x="121" y="-28" width="78" height="100"/>
+                            <rect key="frame" x="111" y="-28" width="98" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="設定">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <segue destination="UJG-ka-z8M" kind="modal" identifier="aaaaa" id="F8Q-7F-o2l"/>
@@ -223,7 +227,7 @@ CAjog4zmma/jga7oibI
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLi-4j-QYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="-335"/>
+            <point key="canvasLocation" x="732" y="-335"/>
         </scene>
         <!--Edit Line View Controller-->
         <scene sceneID="0rW-IW-skJ">
