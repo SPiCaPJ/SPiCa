@@ -25,6 +25,7 @@ UIAlertView *secondAlert;
 UIImage *picture;
 CGFloat statusBarHeight;
 CGFloat navBarHeight;
+float distance;
 
 - (void)viewDidLoad
 {
@@ -111,6 +112,7 @@ CGFloat navBarHeight;
     
     //星座標をタッチしたか確認
     int starCount2=0;
+    distance = 30.0;
     for(starCount2 = 0; starCount2<starCount1;starCount2++){
         //CGRect rc = CGRectMake(Starpoints[starCount2].x,Starpoints[starCount2].y,100,100);
         
@@ -125,13 +127,18 @@ CGFloat navBarHeight;
         float r = sqrt(rx*rx + ry*ry);
         NSLog(@"距離：%f", r);
         
-        if(r <= 30) {
+        if(r <= 30.0) {
             NSLog(@"this touch! Stars!");
             touchflag = true;
             
-            //星の中心をとれるかと思ったが下にずれてしまっている
-            location.x = Starpoints[starCount2].x;
-            location.y = Starpoints[starCount2].y;
+            if(r <= distance){
+                distance = r;
+                //星の中心をとれるかと思ったが下にずれてしまっている
+                location.x = Starpoints[starCount2].x;
+                location.y = Starpoints[starCount2].y;
+
+            }
+            
             
            // location.x = Starpoints[starCount2].x+10;
            // location.y = Starpoints[starCount2].y-34;
