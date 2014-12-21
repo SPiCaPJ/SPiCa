@@ -83,13 +83,16 @@ const int STAR_SIZE_BIG = 40;
     
     
     //背景画像の追加
-    UIImageView *backView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back1.png"]];
-    
+    UIImageView *backView;
     backView.contentMode = UIViewContentModeScaleAspectFit;
+    backView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back1.png"]];
+    
+    
     backView.tag = -1;
     [self.view addSubview:backView];
     [self.view sendSubviewToBack:backView];
     
+    showImageView.contentMode = UIViewContentModeScaleAspectFit;
     showImageView.image = [self regionSegmentation:self.picture];
     
     cv::Mat mat = [self matWithImage:showImageView.image];

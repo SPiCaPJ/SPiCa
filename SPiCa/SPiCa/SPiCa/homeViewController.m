@@ -227,6 +227,11 @@ UIAlertView *alert;
     // オリジナル画像
     UIImage *saveImage = (UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage];
     
+    //写真の向きどうりになるように画像を作り直す
+    UIGraphicsBeginImageContext(saveImage.size);
+    [saveImage drawInRect:CGRectMake(0, 0, saveImage.size.width, saveImage.size.height)];
+    saveImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
     
     //次画面に送る用の画像をフィールド変数にセット
     selectedImage = saveImage;
@@ -241,7 +246,6 @@ UIAlertView *alert;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    //[self.navigationController setNavigationBarHidden:NO animated:NO];
     //Segueの特定
     if ( [[segue identifier] isEqualToString:@"toEditStar"] ) {
         editStarViewController *editStarViewController = [segue destinationViewController];
