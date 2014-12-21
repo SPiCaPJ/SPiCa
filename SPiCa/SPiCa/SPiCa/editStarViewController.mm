@@ -40,6 +40,8 @@ CGFloat navBarHeight;
 CGFloat availableHeight;
 CGFloat availableWidth;
 
+int starCount;
+
 
 const int STAR_SIZE_SMALL = 20;
 const int STAR_SIZE_MIDDLE = 30;
@@ -58,7 +60,7 @@ const int STAR_SIZE_BIG = 40;
     self.starColor = 0;
     self.starKind = 0;
     self.starSize = 1;
-    
+    starCount = 0;
     
     //戻るボタンの文字を変更
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] init];
@@ -124,9 +126,8 @@ const int STAR_SIZE_BIG = 40;
 //ダブルタップされたときに呼ばれる
 - (void)doubleTap:(UITapGestureRecognizer *)recognizer {
     if (recognizer.state == UIGestureRecognizerStateEnded){
-        
         [recognizer.view removeFromSuperview];
-        
+        starCount -= 1;
     }
 }
 
@@ -138,6 +139,7 @@ const int STAR_SIZE_BIG = 40;
     UITouch* touch = [touches anyObject];
     CGPoint point = [touch locationInView:self.view];
     
+    //星のオブジェクトの作成
     currentStampView = [self MakeStar:point];
     currentStampView.center = point;
     //タッチされているビューを識別するためにタグをつける
@@ -145,8 +147,12 @@ const int STAR_SIZE_BIG = 40;
     currentStampView.tag = tagNo;
     tagNo += 1;
     
+    
+    
     //既に配置されたビュー以外がタッチされた場合
     if(touch.view.tag != currentStampView.tag){
+        //星の数が50個以上の場合は配置しない
+        if(starCount > 50) return;
         //スタンプを貼付ける
         UITapGestureRecognizer *doubleTap =
         [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -155,7 +161,7 @@ const int STAR_SIZE_BIG = 40;
         [currentStampView addGestureRecognizer:doubleTap];
         
         [self.view addSubview:currentStampView];
-        
+        starCount += 1;
         _isPressStamp = YES;
         
     }
