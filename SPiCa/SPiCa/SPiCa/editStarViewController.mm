@@ -32,6 +32,18 @@ UIImage *picture;
 NSInteger tagNo;
 
 NSMutableArray *stars;
+CGRect  screen;
+CGFloat screenWidth;
+CGFloat screenHeight;
+CGFloat statusBarHeight;
+CGFloat navBarHeight;
+CGFloat availableHeight;
+CGFloat availableWidth;
+
+
+const int STAR_SIZE_SMALL = 20;
+const int STAR_SIZE_MIDDLE = 30;
+const int STAR_SIZE_BIG = 40;
 
 @implementation editStarViewController
 - (void)viewDidLoad
@@ -53,33 +65,21 @@ NSMutableArray *stars;
     backButton.title = @"戻る";
     self.navigationItem.backBarButtonItem = backButton;
     
-    /*
-    UIBarButtonItem* right1 = [[UIBarButtonItem alloc]
-                               initWithTitle:@"右1"
-                               style:UIBarButtonItemStyleBordered
-                               target:self
-                               action:nil];
-
-    self.navigationItem.rightBarButtonItems = @[right1];
-    */
     
     //ナビゲーションツールバーを除いた大きさの取得
-    CGRect  screen = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = CGRectGetWidth(screen);
-    CGFloat screenHeight = CGRectGetHeight(screen);
-    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
-    CGFloat navBarHeight = self.navigationController.navigationBar.bounds.size.height;
-    CGFloat availableHeight = screenHeight - statusBarHeight - navBarHeight;
-    CGFloat availableWidth = screenWidth;
+    screen = [[UIScreen mainScreen] bounds];
+    screenWidth = CGRectGetWidth(screen);
+    screenHeight = CGRectGetHeight(screen);
+    statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    navBarHeight = self.navigationController.navigationBar.bounds.size.height;
+    availableHeight = screenHeight - statusBarHeight - navBarHeight;
+    availableWidth = screenWidth;
     
-    //todoフッター部も設ける
     self.view.frame = CGRectMake(0, statusBarHeight + navBarHeight, availableWidth, availableHeight);
     
     showImageView = [[UIImageView alloc] init];
     
     
-    //todo
-    //メソッドにして動的に変更
     //背景画像の追加
     UIImageView *backView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back1.png"]];
     
@@ -87,9 +87,6 @@ NSMutableArray *stars;
     backView.tag = -1;
     [self.view addSubview:backView];
     [self.view sendSubviewToBack:backView];
-    
-    //領域分割
-    //self.picture = [UIImage imageNamed:@"hisyatai1.png"];
     
     showImageView.image = [self regionSegmentation:self.picture];
     
@@ -103,8 +100,6 @@ NSMutableArray *stars;
     
     //透過させる
     showImageView.alpha = 0.08;
-    
-    //[showImageView setFrame:[[UIScreen mainScreen]applicationFrame]];
     
     showImageView.frame = CGRectMake(0, statusBarHeight + navBarHeight, availableWidth, availableHeight);
     showImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -123,7 +118,6 @@ NSMutableArray *stars;
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -181,15 +175,15 @@ NSMutableArray *stars;
     if(_isPressStamp){
         if(self.starSize == 0)
         {
-            currentStampView.frame = CGRectMake(point.x-5, point.y-5, 10,10);
+            currentStampView.frame = CGRectMake(point.x - STAR_SIZE_SMALL / 2, point.y - STAR_SIZE_SMALL / 2, STAR_SIZE_SMALL,STAR_SIZE_SMALL);
         }
         else if (self.starSize == 1)
         {
-            currentStampView.frame = CGRectMake(point.x-10, point.y-10, 20,20);
+            currentStampView.frame = CGRectMake(point.x - STAR_SIZE_MIDDLE / 2, point.y - STAR_SIZE_MIDDLE / 2, STAR_SIZE_MIDDLE,STAR_SIZE_MIDDLE);
         }
         else
         {
-            currentStampView.frame = CGRectMake(point.x-15, point.y-15, 30,30);
+            currentStampView.frame = CGRectMake(point.x - STAR_SIZE_BIG / 2, point.y - STAR_SIZE_BIG / 2, STAR_SIZE_BIG,STAR_SIZE_BIG);
         }
     }
 }
@@ -213,14 +207,28 @@ NSMutableArray *stars;
     //Segueの特定    
     if ( [[segue identifier] isEqualToString:@"toEditLine"] ) {
         editLineViewController *editLineViewController = [segue destinationViewController];
-        //ここで遷移先ビューのクラスの変数receiveStringに値を渡している
+
         [self listSubviewsOfView:self.view];
-        picture = [self captureImage];
+        UIView* starView = [[UIView alloc] initWithFrame:CGRectMake(0, statusBarHeight + navBarHeight, availableWidth, availableHeight)];
+        UIColor *color_ = [UIColor darkGrayColor];
+        UIColor *alphaColor_ = [color_ colorWithAlphaComponent:0.0]; //透過率
+        starView.backgroundColor = alphaColor_;
+        
+        for(DragView *subview in stars){
+            [subview removeFromSuperview];
+            [starView addSubview:subview];
+                    }
+        picture = [self captureImage:starView];
+        //picture = [self captureImage];
         editLineViewController.picture = picture;
+        editLineViewController.backGround =[self captureImage:self.view];
         editLineViewController.stars = stars;
+        for(DragView *subview in stars){
+            [self.view addSubview:subview];
+        }
         
     }
-    else if ([[segue identifier] isEqualToString:@"aaaaa"] ){
+    else if ([[segue identifier] isEqualToString:@"toPalette"] ){
         PaletteViewController *paletteViewController = [segue destinationViewController];
         paletteViewController.delegate = self;
         paletteViewController.int_Back_color = self.backColor;
@@ -243,7 +251,7 @@ NSMutableArray *stars;
     
     for (DragView *subview in subviews) {
         
-        if(subview.tag != 0){
+        if(subview.tag > 0){
             
             
             [stars addObject:subview];
@@ -253,7 +261,7 @@ NSMutableArray *stars;
 }
 
 //重なっているビューを一つのUIimageとして返すメソッド
--(UIImage *)captureImage
+-(UIImage *)captureImage:(UIView *)view
 {
     // 描画領域の設定
     CGSize size = CGSizeMake(showImageView.frame.size.width , showImageView.frame.size.height);
@@ -271,7 +279,7 @@ NSMutableArray *stars;
     CGContextConcatCTM(context , affineMoveLeftTop );
     
     // viewから切り取る
-    [(CALayer*)self.view.layer renderInContext:context];
+    [(CALayer*)view.layer renderInContext:context];
     
     // 切り取った内容をUIImageとして取得
     UIImage *cnvImg = UIGraphicsGetImageFromCurrentImageContext();
@@ -281,6 +289,7 @@ NSMutableArray *stars;
     
     return cnvImg;
 }
+
 
 //画像を領域分割するメソッド
 -(UIImage *)regionSegmentation:(UIImage *)image{
@@ -390,11 +399,11 @@ NSMutableArray *stars;
     
     //サイズを指定してオブジェクトを作成
     if(self.starSize == 0){
-        returnView = [[DragView alloc] initWithFrame:CGRectMake(point.x-5, point.y-5, 10, 10)];
+        returnView = [[DragView alloc] initWithFrame:CGRectMake(point.x-STAR_SIZE_SMALL / 2, point.y - STAR_SIZE_SMALL / 2, STAR_SIZE_SMALL, STAR_SIZE_SMALL)];
     }else if(self.starSize == 1){
-        returnView = [[DragView alloc] initWithFrame:CGRectMake(point.x-10, point.y-10, 20, 20)];
+        returnView = [[DragView alloc] initWithFrame:CGRectMake(point.x - STAR_SIZE_MIDDLE / 2, point.y - STAR_SIZE_MIDDLE / 2, STAR_SIZE_MIDDLE, STAR_SIZE_MIDDLE)];
     }else{
-        returnView = [[DragView alloc] initWithFrame:CGRectMake(point.x-15, point.y-15, 30, 30)];
+        returnView = [[DragView alloc] initWithFrame:CGRectMake(point.x - STAR_SIZE_BIG / 2, point.y- STAR_SIZE_BIG / 2, STAR_SIZE_BIG, STAR_SIZE_BIG)];
     }
     
     //形の変更
@@ -409,7 +418,7 @@ NSMutableArray *stars;
     if(self.starColor == 0) monochromeColor= [UIColor yellowColor];
     else if (self.starColor == 1) monochromeColor= [UIColor cyanColor];
     else if (self.starColor == 2) monochromeColor= [UIColor redColor];
-    else if (self.starColor == 3) monochromeColor= [UIColor yellowColor];   //todo 緑
+    else if (self.starColor == 3) monochromeColor= [UIColor greenColor];
     else if (self.starColor == 4) monochromeColor= [UIColor whiteColor];
     
     CIImage* ciImage = [[CIImage alloc]initWithImage:originImage];
@@ -461,6 +470,7 @@ NSMutableArray *stars;
     [self.view sendSubviewToBack:backView];
      
 }
+
 
 @end
 

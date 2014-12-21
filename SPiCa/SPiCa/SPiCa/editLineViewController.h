@@ -11,6 +11,7 @@
 @interface editLineViewController : UIViewController
 
 @property UIImage *picture;
+@property UIImage *backGround;
 @property CGPoint test;
 @property CGPoint points;
 @property CGContextRef context;

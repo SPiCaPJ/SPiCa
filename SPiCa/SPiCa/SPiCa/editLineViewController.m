@@ -19,6 +19,7 @@
 @implementation editLineViewController
 //ベースとなる画像
 UIImageView *showImageView;
+UIImageView *starView;
 UIAlertView *firstAlert;
 UIAlertView *secondAlert;
 UIImage *picture;
@@ -43,13 +44,17 @@ CGFloat navBarHeight;
     
     //ここで渡された画像を表示
     showImageView = [[UIImageView alloc] init];
-    showImageView.image = self.picture;
-    //[showImageView setFrame:[[UIScreen mainScreen]applicationFrame]];
-    
+    showImageView.image = self.backGround;
     showImageView.frame = CGRectMake(0, statusBarHeight + navBarHeight, availableWidth, availableHeight);
+    
+    starView = [[UIImageView alloc] init];
+    starView.image = self.picture;
+    starView.frame = CGRectMake(0, statusBarHeight + navBarHeight, availableWidth, availableHeight);
+      
     
     //showImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:showImageView];
+    [self.view addSubview:starView];
     
     //ここから線を引くための下処理
     //初期フラグ
@@ -221,7 +226,7 @@ CGFloat navBarHeight;
         // まとめて削除
         [self.TouchArray removeObjectsAtIndexes:indexes];
         
-        showImageView.image = self.picture;
+        showImageView.image = self.backGround;
         
         //線を引くための頂点を格納する配列
         
