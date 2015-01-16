@@ -130,6 +130,8 @@ const int STAR_SIZE_BIG = 40;
 - (void)doubleTap:(UITapGestureRecognizer *)recognizer {
     if (recognizer.state == UIGestureRecognizerStateEnded){
         [recognizer.view removeFromSuperview];
+        //星の座標をなんか消したい(stars)
+       
         starCount -= 1;
     }
 }
@@ -222,20 +224,25 @@ const int STAR_SIZE_BIG = 40;
         UIColor *color_ = [UIColor darkGrayColor];
         UIColor *alphaColor_ = [color_ colorWithAlphaComponent:0.0]; //透過率
         starView.backgroundColor = alphaColor_;
-        
+    
+        /*エラー1
         for(DragView *subview in stars){
-            [subview removeFromSuperview];
-            [starView addSubview:subview];
-                    }
+           [subview removeFromSuperview];
+        　　[starView addSubview:subview];
+         }
+         */
+        
         picture = [self captureImage:starView];
         //picture = [self captureImage];
         editLineViewController.picture = picture;
         editLineViewController.backGround =[self captureImage:self.view];
         editLineViewController.stars = stars;
+  
+        /*エラー2
         for(DragView *subview in stars){
-            [self.view addSubview:subview];
+           [self.view addSubview:subview];
         }
-        
+        */
     }
     else if ([[segue identifier] isEqualToString:@"toPalette"] ){
         PaletteViewController *paletteViewController = [segue destinationViewController];
