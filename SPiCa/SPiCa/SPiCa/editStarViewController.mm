@@ -225,12 +225,12 @@ const int STAR_SIZE_BIG = 40;
         UIColor *alphaColor_ = [color_ colorWithAlphaComponent:0.0]; //透過率
         starView.backgroundColor = alphaColor_;
     
-        /*エラー1
+        
         for(DragView *subview in stars){
            [subview removeFromSuperview];
         　　[starView addSubview:subview];
          }
-         */
+        
         
         picture = [self captureImage:starView];
         //picture = [self captureImage];
@@ -238,11 +238,11 @@ const int STAR_SIZE_BIG = 40;
         editLineViewController.backGround =[self captureImage:self.view];
         editLineViewController.stars = stars;
   
-        /*エラー2
+        
         for(DragView *subview in stars){
            [self.view addSubview:subview];
         }
-        */
+        
     }
     else if ([[segue identifier] isEqualToString:@"toPalette"] ){
         PaletteViewController *paletteViewController = [segue destinationViewController];
@@ -258,6 +258,8 @@ const int STAR_SIZE_BIG = 40;
 
 //重なっているビューの中のDragViewのみをリストに入れるメソッド
 - (void)listSubviewsOfView:(UIView *)view {
+    
+    [stars removeAllObjects];
     
     // Get the subviews of the view
     NSArray *subviews = [view subviews];
