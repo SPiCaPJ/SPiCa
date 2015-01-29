@@ -210,6 +210,7 @@ UIAlertView *alert;
     [self dismissViewControllerAnimated:YES completion:nil];
     
     //くるくる
+    
     alert = [[UIAlertView alloc]initWithTitle:nil
                                                   message:@"読み込み中"
                                                  delegate:nil
@@ -217,8 +218,7 @@ UIAlertView *alert;
                                         otherButtonTitles:nil, nil];
     
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    //indicator.center = CGPointMake((self.view.bounds.size.width / 2), (self.view.bounds.size.height / 2));
-    indicator.color = [UIColor blueColor];
+      indicator.color = [UIColor blueColor];
     [indicator startAnimating];
     
     [alert setValue:indicator forKey:@"accessoryView"];
@@ -238,8 +238,17 @@ UIAlertView *alert;
     //取得した画像を受け渡して、遷移する動作が入る
     [self performSegueWithIdentifier:@"toEditStar" sender:self];
     
-
-    
+    NSArray  *aOsVersions = [[[UIDevice currentDevice]systemVersion] componentsSeparatedByString:@"."];
+    NSInteger iOsVersionMajor  = [[aOsVersions objectAtIndex:0] intValue];
+    if (iOsVersionMajor <= 7)
+    {
+        [tm invalidate];
+        tm = nil;
+        //くるくるを閉じる
+        [alert dismissWithClickedButtonIndex:0 animated:NO];
+        //ナビゲーションバーを表示
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    }
 }
 
 //画面遷移時
