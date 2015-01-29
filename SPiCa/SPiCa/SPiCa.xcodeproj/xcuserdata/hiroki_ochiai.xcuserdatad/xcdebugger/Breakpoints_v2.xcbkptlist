@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SPiCa/editStarViewController.mm"
-            timestampString = "443098502.385176"
+            timestampString = "443318848.181287"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
             landmarkName = "-listSubviewsOfView:"
             landmarkType = "5">
          </BreakpointContent>

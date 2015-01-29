@@ -132,6 +132,7 @@ const int STAR_SIZE_BIG = 40;
         [recognizer.view removeFromSuperview];
         //星の座標をなんか消したい(stars)
        
+        
         starCount -= 1;
     }
 }

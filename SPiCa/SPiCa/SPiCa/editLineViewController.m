@@ -392,7 +392,7 @@ float distance;
 - (void)active
 {
     //投稿するテキスト
-    NSString *sharedText = @"#SPiCa";
+    NSString *sharedText = @"#spica_twitter";
     //投稿するコンテンツ、ここにUIImageを記載
     //NSArray *activityItems = @[sharedText, showImageView];
     NSArray *activityItems = @[sharedText,picture];
